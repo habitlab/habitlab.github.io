@@ -9,11 +9,12 @@
   out$.install_extension = install_extension = function(){
     var url, successCallback;
     if ((typeof chrome != 'undefined' && chrome !== null) && chrome.webstore != null && chrome.webstore.install != null && window.location.protocol === 'https:') {
-      return chrome.webstore.install(url = 'https://chrome.google.com/webstore/detail/mogonddkdjlindkbpkagjfkbckgjjmem', successCallback = function(){
+      console.log('install_extension inline');
+      return chrome.webstore.install(url = 'https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd', successCallback = function(){
         return console.log('extension install finished');
       });
     } else {
-      return window.open('https://chrome.google.com/webstore/detail/mogonddkdjlindkbpkagjfkbckgjjmem');
+      return window.open('https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd');
     }
   };
 }).call(this);

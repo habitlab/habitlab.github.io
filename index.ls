@@ -4,10 +4,11 @@ document.addEventListener 'DOMContentLoaded', ->
 
 export install_extension = ->
   if chrome? and chrome.webstore? and chrome.webstore.install? and window.location.protocol == 'https:'
+    console.log 'install_extension inline'
     chrome.webstore.install(
-      url='https://chrome.google.com/webstore/detail/mogonddkdjlindkbpkagjfkbckgjjmem',
+      url='https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd',
       successCallback= ->
         console.log 'extension install finished'
     )
   else
-    window.open('https://chrome.google.com/webstore/detail/mogonddkdjlindkbpkagjfkbckgjjmem')
+    window.open('https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd')
