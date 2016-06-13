@@ -9,6 +9,9 @@ export install_extension = ->
       url='https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd',
       successCallback= ->
         console.log 'extension install finished'
+      , failureCallback= (evt) ->
+        console.log 'extension install failed'
+        console.log evt
     )
   else
     window.open('https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd')

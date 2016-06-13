@@ -7,11 +7,14 @@
     }
   });
   out$.install_extension = install_extension = function(){
-    var url, successCallback;
+    var url, successCallback, failureCallback;
     if ((typeof chrome != 'undefined' && chrome !== null) && chrome.webstore != null && chrome.webstore.install != null && window.location.protocol === 'https:') {
       console.log('install_extension inline');
       return chrome.webstore.install(url = 'https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd', successCallback = function(){
         return console.log('extension install finished');
+      }, failureCallback = function(evt){
+        console.log('extension install failed');
+        return console.log(evt);
       });
     } else {
       return window.open('https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd');
