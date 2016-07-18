@@ -6,18 +6,13 @@ function main(){
 function addButtonListener() {
   $('#notifyButton').bind('click', function() {
     console.log($('#emailInput').val())
-    const emailInput = $('#emailInput').val()    
+    const emailInput = $('#emailInput').val()
 
     if (emailInput !== '') { //if email is not empty
       console.log('hi')
-      $.post("http://habitlab.herokuapp.com/addsignup",
-      {
-          email: emailInput
-      },
-      function(data, status){
-          alert("Data: " + data + "\nStatus: " + status);
+      $.getJSON(`http://habitlab.herokuapp.com/addsignup?${$.param({email: emailInput})}&callback=?`, null, function(response) {
+        console.log('response data received')
       });
-          
       //alert('Thank you! Your email has been added.');
     }
   });
