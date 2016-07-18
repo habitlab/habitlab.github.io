@@ -10,7 +10,7 @@ function addButtonListener() {
 
     if (emailInput !== '') { //if email is not empty
       console.log('hi')
-      $.getJSON(`http://habitlab.herokuapp.com/addsignup?${$.param({email: emailInput})}&callback=?`, null, function(response) {
+      $.getJSON(`//habitlab.herokuapp.com/addsignup?${$.param({email: emailInput})}&callback=?`, null, function(response) {
         console.log('response data received')
       });
       //alert('Thank you! Your email has been added.');
