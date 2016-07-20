@@ -1,5 +1,4 @@
 function main(){
-  console.log("hi! this script is being run.")
   addButtonListener()
 }
 
