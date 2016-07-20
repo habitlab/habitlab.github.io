@@ -22,6 +22,26 @@
 </head>
 <body>
 
+<!-- Loads the Facebook SDK-->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1375172605833442',
+      xfbml      : true,
+      version    : 'v2.7'
+    });  
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
 <nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -57,8 +77,7 @@
       -->
 
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-      <!--
+      <ul class="nav navbar-nav navbar-right">      
             <li>
                 <a>
                 <div id="shareButton">
@@ -73,7 +92,7 @@
                     Tweet
                 </a>
             </li>
-        -->
+        
              <li>
                 <a href="mailto:?to=&body=Check%20out%20this%20new%20browser%20extension%20from%20Stanford%20which%20experimentally%20improves%20your%20habits!&subject=Check%20Out%20Habitlab!">
                     <i class="fa fa-envelope-o"></i>
@@ -131,6 +150,7 @@
     <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/script.js" type="text/javascript"></script>
+    <script src="js/facebook.js" type="text/javascript"></script>
 
 
 </html>
