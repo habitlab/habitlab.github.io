@@ -1,4 +1,4 @@
-function main(){
+function main() {
   addButtonListener()
 }
 
@@ -9,7 +9,6 @@ function addButtonListener() {
     const emailInput = $('#emailInput').val()
 
     if (emailInput !== '') { //if email is not empty
-      console.log('hi')
       $.getJSON(`//habitlab.herokuapp.com/addsignup?${$.param({email: emailInput})}&callback=?`, null, function(response) {
         console.log('response data received');
         $('#emailInput').val(''); // clears the email input
@@ -18,8 +17,7 @@ function addButtonListener() {
           text: 'Once HabitLab is ready you will get an email at ' + emailInput,
           type: 'success',
         });
-      });
-      //alert('Thank you! Your email has been added.');
+      });      
     }
   });
 }
