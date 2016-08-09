@@ -912,6 +912,12 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
     background-color: #FF3B30;
 }
 
+.backgroundFillIn{
+    border-radius: 40px 40px 40px 40px;
+    height: 200px;
+    background: white;
+}
+
 @media (max-width:768px){
     .fixed-plugin{
         top: 80px;
