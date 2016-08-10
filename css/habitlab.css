@@ -934,6 +934,17 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
     width: 500px;
 }
 
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
 
 @media (max-width:768px){
     .fixed-plugin{
