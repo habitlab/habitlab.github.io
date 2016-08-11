@@ -931,19 +931,20 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
     padding: 1.5em;
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 500px;
+    width: 400px;
 }
 
 .row-centered {
-    text-align:center;
+    text-align: center;
 }
+
 .col-centered {
-    display:inline-block;
-    float:none;
+    display: inline-block;
+    float: none;
     /* reset the text-align */
-    text-align:left;
+    text-align: left;
     /* inline-block space fix */
-    margin-right:-4px;
+    margin-right: -4px;
 }
 
 @media (max-width:768px){
