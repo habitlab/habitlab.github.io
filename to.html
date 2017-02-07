@@ -2,7 +2,7 @@
 <html>
   <head>
     <script>
-      if (navigator.serviceWorker && navigator.serviceWorker.register) {
+      if (window.location.protocol == 'https:' && navigator.serviceWorker && navigator.serviceWorker.register) {
         navigator.serviceWorker.register('service-worker-to.js', {
           scope: './to.html'
         });
