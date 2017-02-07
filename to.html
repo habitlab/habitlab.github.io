@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+      if (navigator.serviceWorker && navigator.serviceWorker.register) {
+        navigator.serviceWorker.register('service-worker-to.js', {
+          scope: './to.html'
+        });
+      }
+    </script>
   </head>
   <body>
     If you are seeing this you need to update <a href="http://habitlab.stanford.edu/">HabitLab</a>
