@@ -1,217 +1,249 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HabitLab</title>		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- <link rel="stylesheet" href="assets/css/old_website.css" /> -->
 
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<!-- SEO -->
+		<description style="display: none;">HabitLab</description>
+		<h1 style="display: none;">HabitLab</h1>
+	</head>
 
-    <title>Habitlab</title>
+	<style>
+		#hdr_background {
+			/*background-color: rgba(55, 55, 55, 0.2);*/
+			height: 100%;
+			width: 100%;
+			font-family: helvetica;
+			font-weight: lighter;
+			font-size: 30px;
+		}
 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"> -->
-    <link href="css/bootstrap.css" rel="stylesheet" />
-  	<link href="css/habitlab.css" rel="stylesheet" />
+		.blue_one {
+			background-color: #61A3C5;
+		}
+		.blue_two {
+			background-color: #7AB8D4;
+		}
 
-    <!--     Fonts and Icons     -->
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		.hdr_ftr {
+			position: absolute;
+			bottom: 0px;
+			background-color: rgba(96, 163, 197, 0.5);
+			height: 100px;
+			width: 100%;
+		}
 
-    <!--      Sweetalert   -->
-    <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="bower_components/sweetalert/dist/sweetalert.css">
+		.email_bar {
+			display: inline-block;
+			height: 100px;
+			width: 100%;
+			/*padding: 10px;*/
+		}
 
-    <!--      Favicon        -->
-    <link rel="icon" href="images/favicon.png">
+		.email {
+			display: inline-block;
+			color: #ccc;
+			background-color: #fff;
+			height: 60%;
+			resize: none;
+			border: 0;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
 
-</head>
-<body>
+		}
+		.subscribe {
+			display: inline-block;
+			height: 60%;
+			background-color: #2FBFC2;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
 
-<!-- Loads the Facebook SDK-->
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1375172605833442',
-      xfbml      : true,
-      version    : 'v2.7'
-    });  
-  };
+		.ep {
+			/*padding: 10px;*/
+		}
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+		.box_padding {
+			padding: 40px;
+		}
 
+		.vertical_align {
+			display: flex;
+			align-items: center;
+		}
 
-<nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
+		.horizontal_align {
+			margin: auto;
+			display: block;
+		}
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+		.hta {
+			text-align: center;
+		}
 
-      <!--
-         <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="images/flags/US.png"/>
-                English(US)
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="#"><img src="images/flags/DE.png"/> Deutsch</a></li>
-                <li><a href="#"><img src="images/flags/GB.png"/> English(UK)</a></li>
-                <li><a href="#"><img src="images/flags/FR.png"/> Français</a></li>
-                <li><a href="#"><img src="images/flags/RO.png"/> Română</a></li>
-                <li><a href="#"><img src="images/flags/IT.png"/> Italiano</a></li>
+		.box_margin {
+			margin-top: 40px;
+			margin-bottom: 40px !important;
+		}
 
-              </ul>
-        </li>
-      -->
+		.intro_info {
+			color: #fff;
+		}
 
-      </ul>
-      <ul class="nav navbar-nav navbar-right">      
-            <li>
-                <a>
-                <div id="shareButton">
-                    <i class="fa fa-facebook-square"></i>
-                    Share
-                </div>
-                </a>
-            </li>
-
-            
-             <li>
-                <a href="https://github.com/habitlab">
-                    <i class="fa fa-github"></i>
-                    Contribute
-                </a>
-            </li>          
-            
-             <li>
-                <a href="mailto:?to=&body=Check%20out%20this%20new%20browser%20extension%20from%20Stanford%20which%20experimentally%20improves%20your%20habits!&subject=Check%20Out%20Habitlab!">
-                    <i class="fa fa-envelope-o"></i>
-                    Email
-                </a>
-            </li>
-       </ul>
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container -->
-</nav>
-<div class="main" style="background-image: url('images/default2.jpg')">
-
-<!--    Change the image source '/images/default.jpg' with your favourite image.     -->
-
-    <div class="cover blue" data-color="black"></div>
-
-<!--   You can change the black color for the filter with those colors: blue, green, red, orange       -->
-
-    <div class="container">
-        <h1 class="logo cursive">
-            <img src="images/whitebeaker_height.png" alt="Habitlab" width="70px"> HabitLab
-        </h1>
-<!--  H1 can have 2 designs: "logo" and "logo cursive"           -->
-
-        <div class="content">
-            <h4 class="motto">Habitlab is a browser extension for improving your online habits using self-experimentation.</h4>
-            <center><a href="https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd" target="_blank"><img src="images/install_habitlab_2.png" width="500px"/></a></center>
-
-            <h4 class="howItWorks"> How it Works: </h4>
-
-            <div class="container">
-              <div class="row top-buffer row-centered">
-
-                <div class="col-sm-4 col-centered">
-                <!--
-                  <div class="backgroundFillIn">
-                    Set goals for websites you want to spend less time on.
-                  </div>
-                -->
-                  <div class="backgroundFillIn">
-                      <div class="card">
-                          <img class="card-img-top" src="images/website_column_1.jpg" height = "150" width = "300">
-                          <div class="card-block">
-                              <h4 class="card-title"></h4>
-                              <p class="card-text">Set goals for websites you want to spend less time on.</p>
-                              <ul class="list-group list-group-flush">
-                                  <li class="list-group-item">Goal-Oriented</li>
-                                  <li class="list-group-item">Large Library of Interventions</li>
-                                  <li class="list-group-item">Open-Source and Extensible</li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>                          
-                </div>
-
-                <div class="col-sm-4 col-centered">
-                  <div class="backgroundFillIn">
-                      <div class="card">
-                          <img class="card-img-top" src="images/website_column_3.jpg" height = "150" width = "300">
-                          <div class="card-block">
-                              <h4 class="card-title"></h4>
-                              <p class="card-text">HabitLab will try to find out which interventions work out for you.</p>
-                              <ul class="list-group list-group-flush">
-                                  <li class="list-group-item">Smartly Auto-Managed Options</li>
-                                  <li class="list-group-item">User-Overridable</li>
-                                  <li class="list-group-item">Completely Anonymous</li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>                          
-                </div>
-
-             
-
-                <div class="col-sm-4 col-centered">
-                  <div class="backgroundFillIn">
-                      <div class="card">
-                          <img class="card-img-top" src="images/website_column_2.jpg" height = "150" width = "300">
-                          <div class="card-block">
-                              <h4 class="card-title"></h4>
-                              <p class="card-text">View your progress on your goals and earn badges for achieving them.</p>
-                              <ul class="list-group list-group-flush">
-                                  <li class="list-group-item">Fully-Featured</li>
-                                  <li class="list-group-item">Crowdsourced and Research-Driven</li>
-                                  <li class="list-group-item">Proven Effective</li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-             Powered by the Stanford HCI Group. 2016.
-      </div>
-    </div>  <!-- Close cover blue -->
- </div>     <!--Close main -->
-
- </body>
-    <script src="https://cdn.jsdelivr.net/holder/2.9.0/holder.min.js"></script> <!-- For cards -->
-    <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
-    <script src="js/bootstrap.js" type="text/javascript"></script>
-    <script src="js/script.js" type="text/javascript"></script>
-    <script src="js/facebook.js" type="text/javascript"></script>
+	</style>
 
 
+	<body>
+
+		<!-- Header -->
+
+		<section id="header" class="dark">
+			<div id="hdr_background">
+				<header id="intro">
+					<!-- <img id="tagline" src="images/habitlab_logo.png" alt='HabitLab'></img> -->
+					<div style="height: 100px; margin-bottom: 20px;">
+						<img src="images/icon_white.png" style="height: 100%; display: inline-block;"/>
+						<div style="font-family: 'Montserrat'; font-size: 130px; display: inline-block;">
+							HabitLab
+						</div>
+					</div>
+					<h1>Improve your online habits</h1>
+					<a href="http://habitlab.github.io/chrome" class="button nm">
+						<i class="fa fa-plus-square" aria-hidden="true"></i>
+						Add HabitLab to Chrome
+					</a>
+				</header>
+			</div>
+			<div class="hdr_ftr">
+				<div class="row">
+					<div class="2u 12u(narrow)"></div>
+					<div class="8u 12u(narrow) ">
+						<!-- <div class="email_bar">
+							<div class="email hta" placeholder="Enter your email" >
+								Enter your email
+							</div>
+							<div class="subscribe hta">
+								Stay in touch
+							</div>
+
+						</div> -->
+						<div class="email_bar">
+							<div style="display: inline-table; height: 60px; margin-top: 20px;">
+								<div class="email hta" placeholder="Enter your email" style="display: table-cell; vertical-align: middle;">
+								Enter your email
+								</div>
+							</div>
+							<div style="display: inline-table; height: 60px;">
+								<div class="subscribe hta" style="display: table-cell; vertical-align: middle;">
+								Stay in touch
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="2u 12u(narrow)"></div>
+
+				</div>
+			</div>
+		</section>
+
+
+		<!-- First -->
+		<section id="first" class="main">
+			<div>
+				<div class="row blue_one hta">
+					<div class="4u 12u(narrow) blue_one">
+						<section class="box_margin">
+							<img id="tagline_2" src="images/icon_white.png" alt='safeswap'></img>
+							<header>
+								<h4>Set Goals</h4>
+							</header>
+							<p class="intro_info hta">
+								Pick sites you want to spend less time on
+							</p>
+						</section>
+					</div>
+					<div class="4u 12u(narrow) blue_two">
+						<section class="box_margin">
+							<img id="tagline_2" src="images/icon_white.png" alt='safeswap'></img>
+							<header>
+								<h4>Try Interventions</h4>
+							</header>
+							<p class="intro_info hta">
+								HabitLab tries many different interventions
+							</p>
+						</section>
+					</div>
+					<div class="4u 12u(narrow) blue_one">
+						<section class="box_margin">
+							<img id="tagline_2" src="images/icon_white.png" alt='safeswap'></img>
+							<header>
+								<h4>View Progress</h4>
+							</header>
+							<p class="intro_info hta">
+								Learn which interventions work best for you
+							</p>
+						</section>
+					</div>
+
+				</div>
+			</div>
+
+			<header>
+				<div class="container">
+					<a class="nm" href="https://safeswap.io"><img id="tagline_2" src="images/icon_black.png" alt='safeswap'></img></a>
+
+					<h2 class="nm">Introducing <span style="color: #7AB8D4;">HabitLab</span></h2>
+
+					<p>
+
+						<div class="nm">scroll down</div>
+
+						<blockquote class="nm">
+							interventions are designed by motivation specialists just like you
+						</blockquote>
+						<a href="https://habitlab.stanford.edu" class="button nm">Check us out</a>
+					</p>
+				</div>
+			</header>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<ul class="icons">
+				<li><a href="https://www.linkedin.com/in/lewin-cary-7009b1127" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+				<li><a href="http://github.com/lewincary" class="icon fa-github"><span class="label">Github</span></a></li>
+				<li><a href="https://angel.co/lewin-cary" class="icon fa-angellist"><span class="label">AngelList</span></a></li>
+				<li><a href="http://facebook.com/lewin.cary" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="http://bitbucket.com/lewincary" class="icon fa-bitbucket"><span class="label">Bitbucket</span></a></li>
+			</ul>
+			<div class="copyright">
+				<ul class="menu">
+					<li>&copy; HabitLab. All rights reserved.</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
