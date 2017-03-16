@@ -308,9 +308,20 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="assets/js/main.js"></script>
 		<script>
-		if (!chrome.app.isInstalled) {
-			$('#add_button').click(function() {
-				chrome.webstore.install()
+		if (chrome && chrome.app && !chrome.app.isInstalled && window.location.protocol == 'https:') {
+			$('#add_button').mousedown(function(evt) {
+				chrome.webstore.install(
+					'https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd',
+					function() {
+						// success
+						evt.preventDefault();
+						evt.stopPropagation();
+					},
+					function() {
+						// failure
+						window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
+					}
+				)
 			})
 		}
 		</script>
