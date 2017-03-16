@@ -4,6 +4,8 @@
 		<title>HabitLab</title>		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd">
+
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!-- <link rel="stylesheet" href="assets/css/old_website.css" /> -->
 
@@ -292,6 +294,13 @@
 		<script src="assets/js/util.js"></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="assets/js/main.js"></script>
+		<script>
+		if (!chrome.app.isInstalled) {
+			$('#add_button').click(function() {
+				chrome.webstore.install()
+			})
+		}
+		</script>
 
 	</body>
 </html>
