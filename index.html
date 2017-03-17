@@ -323,8 +323,9 @@
 			extension_id = 'bleifeoekkfhicamkpadfoclfhfmmina'
 		}
 		var chrome_store_url = 'https://chrome.google.com/webstore/detail/habitlab/' + extension_id
+		var chrome_store_url_bare = 'https://chrome.google.com/webstore/detail/' + extension_id
 		var onboarding_url = 'chrome-extension://' + extension_id + '/options.html#onboarding'
-		$('#chrome_webstore_item').attr('href', chrome_store_url)
+		$('#chrome_webstore_item').attr('href', chrome_store_url_bare)
 		$('#add_button_top').attr('href', chrome_store_url)
 		$('#add_button').attr('href', chrome_store_url)
 
@@ -343,7 +344,7 @@
 					evt.stopPropagation();
 					install_already_clicked = true
 					chrome.webstore.install(
-						chrome_store_url,
+						chrome_store_url_bare,
 						function() {
 							// success
 							$('#install_text_top').text('Installing HabitLab')
