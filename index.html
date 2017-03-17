@@ -308,14 +308,14 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="assets/js/main.js"></script>
 		<script>
-		if (chrome && chrome.app && !chrome.app.isInstalled && window.location.protocol == 'https:') {
-			$('#add_button').mousedown(function(evt) {
+		if (chrome && chrome.app && !chrome.app.isInstalled && window.location.protocol == 'https:' && window.location.hostname == 'habitlab.netlify.com') {
+			$('#add_button').click(function(evt) {
+				evt.preventDefault();
+				evt.stopPropagation();
 				chrome.webstore.install(
 					'https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd',
 					function() {
 						// success
-						evt.preventDefault();
-						evt.stopPropagation();
 					},
 					function() {
 						// failure
