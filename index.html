@@ -160,7 +160,7 @@
 						</div>
 					</div>
 					<h1>Improve your online habits</h1>
-					<a href="http://habitlab.github.io/chrome" class="button nm">
+					<a href="http://habitlab.github.io/chrome" class="button nm" id="add_button_top">
 						<i class="fa fa-plus-square" aria-hidden="true"></i>
 						Add HabitLab to Chrome
 					</a>
@@ -309,8 +309,7 @@
 		<script src="assets/js/main.js"></script>
 		<script>
 		if (chrome && chrome.app && !chrome.app.isInstalled && window.location.protocol == 'https:' && window.location.hostname == 'habitlab.netlify.com') {
-			$('#add_button').attr('href', '#')
-			$('#add_button').mousedown(function(evt) {
+			var habitlab_button_clicked = function(evt) {
 				evt.preventDefault();
 				evt.stopPropagation();
 				chrome.webstore.install(
@@ -323,7 +322,10 @@
 						window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
 					}
 				)
-			})
+			}
+			$('#add_button_top').mousedown(habitlab_button_clicked)
+			$('#add_button').mousedown(habitlab_button_clicked)
+
 		}
 		</script>
 
