@@ -162,7 +162,7 @@
 					<h1>Improve your online habits</h1>
 					<a href="http://habitlab.github.io/chrome" class="button nm" id="add_button_top">
 						<i class="fa fa-plus-square" aria-hidden="true"></i>
-						Add HabitLab to Chrome
+						<span id="install_text_top">Add HabitLab to Chrome</span>
 					</a>
 				</header>
 			</div>
@@ -277,7 +277,9 @@
 						<!-- <div class="nm main_text">
 							Try it out <span style="color: #7AB8D4;">here</span>
 						</div> -->
-						<a href="http://habitlab.github.io/chrome" class="button nm" id="add_button">Add to Chrome</a>
+						<a href="http://habitlab.github.io/chrome" class="button nm" id="add_button">
+						  <span id="install_text_bottom">Add to Chrome</span>
+						</a>
 					</p>
 				</div>
 			</header>
@@ -316,6 +318,8 @@
 					'https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd',
 					function() {
 						// success
+						$('#install_text_top').text('Installing HabitLab')
+						$('#install_text_bottom').text('Installing HabitLab')
 					},
 					function() {
 						// failure
