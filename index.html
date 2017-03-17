@@ -310,25 +310,46 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="assets/js/main.js"></script>
 		<script>
-		if (chrome && chrome.app && !chrome.app.isInstalled && window.location.protocol == 'https:' && window.location.hostname == 'habitlab.netlify.com') {
-			var habitlab_button_clicked = function(evt) {
-				evt.preventDefault();
-				evt.stopPropagation();
-				chrome.webstore.install(
-					'https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd',
-					function() {
-						// success
-						$('#install_text_top').text('Installing HabitLab')
-						$('#install_text_bottom').text('Installing HabitLab')
-					},
-					function() {
-						// failure
-						window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
-					}
-				)
+		if (chrome && chrome.app && chrome.webstore && window.location.protocol == 'https:' && window.location.hostname == 'habitlab.netlify.com') {
+
+			var check_if_installed_interval = null
+
+			var habitlab_already_installed = function() {
+				clearInterval(check_if_installed_interval)
+				check_if_installed_interval = null
+				$('#install_text_top').text('HabitLab is Installed')
+				$('#install_text_bottom').text('HabitLab is Installed')
 			}
-			$('#add_button_top').click(habitlab_button_clicked)
-			$('#add_button').click(habitlab_button_clicked)
+
+			if (!chrome.app.isInstalled) {
+
+				var habitlab_button_clicked = function(evt) {
+					evt.preventDefault();
+					evt.stopPropagation();
+					chrome.webstore.install(
+						'https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd',
+						function() {
+							// success
+							$('#install_text_top').text('Installing HabitLab')
+							$('#install_text_bottom').text('Installing HabitLab')
+							check_if_installed_interval = setInterval(function() {
+								if (chrome.app.isInstalled) {
+									check_if_installed_interval()
+								}
+							}, 1000)
+						},
+						function() {
+							// failure
+							window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
+						}
+					)
+				}
+				$('#add_button_top').click(habitlab_button_clicked)
+				$('#add_button').click(habitlab_button_clicked)
+
+			} else {
+				habitlab_already_installed()
+			}
 
 		}
 		</script>
