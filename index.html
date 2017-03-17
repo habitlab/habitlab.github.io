@@ -342,9 +342,9 @@
 		$('#add_button').attr('href', chrome_store_url)
 
 		function show_installing_page() {
+			window.location.hash = 'installing'
 			$('#mainpage').hide()
 			$('#installing_page').show()
-			window.location.hash = 'installing'
 		}
 
 
@@ -361,15 +361,15 @@
 					evt.preventDefault();
 					evt.stopPropagation();
 					install_already_clicked = true
+					show_installing_page()
+					$('#install_text_top').off()
+					$('#install_text_bottom').off()
 					chrome.webstore.install(
 						chrome_store_url_bare,
 						function() {
 							// success
 							//$('#install_text_top').text('Installing HabitLab')
 							//$('#install_text_bottom').text('Installing HabitLab')
-							show_installing_page()
-							$('#install_text_top').off()
-							$('#install_text_bottom').off()
 							//window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
 							window.location.href = onboarding_url
 						},
