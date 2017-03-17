@@ -342,9 +342,9 @@
 		$('#add_button').attr('href', chrome_store_url)
 
 		function show_installing_page() {
+			window.location.hash = 'installing'
 			$('#mainpage').hide()
 			$('#installing_page').show()
-			window.location.hash = 'installing'
 		}
 
 
