@@ -3,8 +3,16 @@
 	<head>
 		<title>HabitLab</title>		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+		    if (window.location.host == 'habitlab.github.io') {
+		    	window.location.href = 'https://habitlab.stanford.edu'
+		    }
+			if (window.location.protocol == 'http:') {
+				window.location.protocol = 'https:'
+			}
+		</script>
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd">
+		<link rel="chrome-webstore-item" id="chrome_webstore_item">
 
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!-- <link rel="stylesheet" href="assets/css/old_website.css" /> -->
@@ -160,7 +168,7 @@
 						</div>
 					</div>
 					<h1>Improve your online habits</h1>
-					<a href="http://habitlab.github.io/chrome" class="button nm" id="add_button_top">
+					<a href="https://habitlab.github.io/chrome" class="button nm" id="add_button_top">
 						<i class="fa fa-plus-square" aria-hidden="true"></i>
 						<span id="install_text_top">Add HabitLab to Chrome</span>
 					</a>
@@ -238,7 +246,7 @@
 
 			<header>
 				<div class="container">
-					<a class="nm" href="http://habitlab.github.io/chrome"><img id="tagline_2" src="images/icon_black.png" alt='safeswap'></img></a>
+					<img id="tagline_2" src="images/icon_black.png" alt='safeswap'></img>
 
 					<h2 class="nm" style="font-size: 70px;">Welcome to <span style="color: #7AB8D4;">HabitLab</span></h2>
 
@@ -277,7 +285,7 @@
 						<!-- <div class="nm main_text">
 							Try it out <span style="color: #7AB8D4;">here</span>
 						</div> -->
-						<a href="http://habitlab.github.io/chrome" class="button nm" id="add_button">
+						<a href="https://habitlab.github.io/chrome" class="button nm" id="add_button">
 						  <span id="install_text_bottom">Add to Chrome</span>
 						</a>
 					</p>
@@ -310,6 +318,17 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="assets/js/main.js"></script>
 		<script>
+		var extension_id = 'obghclocpdgcekcognpkblghkedcpdgd'
+		if (window.location.hostname == 'habitlab.netlify.com') {
+			extension_id = 'bleifeoekkfhicamkpadfoclfhfmmina'
+		}
+		var chrome_store_url = 'https://chrome.google.com/webstore/detail/habitlab/' + extension_id
+		var onboarding_url = 'chrome-extension://' + extension_id + '/options.html#onboarding'
+		$('#chrome_webstore_item').attr('href', chrome_store_url)
+		$('#add_button_top').attr('href', chrome_store_url)
+		$('#add_button').attr('href', chrome_store_url)
+
+
 		if (chrome && chrome.app && chrome.webstore && window.location.protocol == 'https:' && window.location.hostname == 'habitlab.netlify.com') {
 
 			var install_already_clicked = false
@@ -318,13 +337,13 @@
 
 				var habitlab_button_clicked = function(evt) {
 					if (install_already_clicked) {
-						window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
+						window.location.href = chrome_store_url
 					}
 					evt.preventDefault();
 					evt.stopPropagation();
 					install_already_clicked = true
 					chrome.webstore.install(
-						'https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd',
+						chrome_store_url,
 						function() {
 							// success
 							$('#install_text_top').text('Installing HabitLab')
@@ -332,11 +351,11 @@
 							$('#install_text_top').off()
 							$('#install_text_bottom').off()
 							//window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
-							window.location.href = 'chrome-extension://obghclocpdgcekcognpkblghkedcpdgd/options.html#onboarding'
+							window.location.href = onboarding_url
 						},
 						function() {
 							// failure
-							window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
+							window.location.href = chrome_store_url
 						}
 					)
 				}
