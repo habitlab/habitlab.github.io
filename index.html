@@ -312,19 +312,26 @@
 		<script>
 		if (chrome && chrome.app && chrome.webstore && window.location.protocol == 'https:' && window.location.hostname == 'habitlab.netlify.com') {
 
+			var install_already_clicked = false
+
 			if (!chrome.app.isInstalled) {
 
 				var habitlab_button_clicked = function(evt) {
+					if (install_already_clicked) {
+						window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
+					}
 					evt.preventDefault();
 					evt.stopPropagation();
+					install_already_clicked = true
 					chrome.webstore.install(
 						'https://chrome.google.com/webstore/detail/obghclocpdgcekcognpkblghkedcpdgd',
 						function() {
 							// success
-							$('#install_text_top').text('Installing HabitLab')
-							$('#install_text_bottom').text('Installing HabitLab')
+							//$('#install_text_top').text('Installing HabitLab')
+							//$('#install_text_bottom').text('Installing HabitLab')
 							$('#install_text_top').off()
 							$('#install_text_bottom').off()
+							window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
 						},
 						function() {
 							// failure
