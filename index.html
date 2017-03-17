@@ -332,6 +332,8 @@
 							// success
 							$('#install_text_top').text('Installing HabitLab')
 							$('#install_text_bottom').text('Installing HabitLab')
+							$('#install_text_top').off()
+							$('#install_text_bottom').off()
 							check_if_installed_interval = setInterval(function() {
 								if (chrome.app.isInstalled) {
 									habitlab_already_installed()
