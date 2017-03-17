@@ -309,7 +309,7 @@
 		<script src="assets/js/main.js"></script>
 		<script>
 		if (chrome && chrome.app && !chrome.app.isInstalled && window.location.protocol == 'https:' && window.location.hostname == 'habitlab.netlify.com') {
-			$('#add_button').click(function(evt) {
+			$('#add_button').mousedown(function(evt) {
 				evt.preventDefault();
 				evt.stopPropagation();
 				chrome.webstore.install(
