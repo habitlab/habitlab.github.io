@@ -7,7 +7,7 @@
 		    if (window.location.host == 'habitlab.github.io') {
 		    	window.location.href = 'https://habitlab.stanford.edu'
 		    }
-			if (window.location.protocol == 'http:') {
+			if ((window.location.host == 'habitlab.stanford.edu' || window.location.href == 'habitlab.netlify.com') && window.location.protocol == 'http:') {
 				window.location.protocol = 'https:'
 			}
 		</script>
@@ -154,6 +154,8 @@
 
 
 	<body>
+
+	<div id="mainpage">
 
 		<!-- Header -->
 
@@ -310,6 +312,16 @@
 			</div>
 		</section>
 
+		</div>
+
+		<div id="installing_page" style="display: none">
+		  <h1 style="font-size: 64px">Installing HabitLab, please wait</h1>
+		  <!--
+		  Here's some cats to keep you entertained as you wait.
+		  TODO add a list of giphies
+		  -->
+		</div>
+
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -329,8 +341,13 @@
 		$('#add_button_top').attr('href', chrome_store_url)
 		$('#add_button').attr('href', chrome_store_url)
 
+		function show_installing_page() {
+			$('#mainpage').hide()
+			$('#installing_page').show()
+		}
 
-		if (chrome && chrome.app && chrome.webstore && window.location.protocol == 'https:' && window.location.hostname == 'habitlab.netlify.com') {
+
+		if (chrome && chrome.app && chrome.webstore && window.location.protocol == 'https:' && (window.location.hostname == 'habitlab.netlify.com' || window.location.hostname == 'habitlab.stanford.edu')) {
 
 			var install_already_clicked = false
 
@@ -347,8 +364,9 @@
 						chrome_store_url_bare,
 						function() {
 							// success
-							$('#install_text_top').text('Installing HabitLab')
-							$('#install_text_bottom').text('Installing HabitLab')
+							//$('#install_text_top').text('Installing HabitLab')
+							//$('#install_text_bottom').text('Installing HabitLab')
+							show_installing_page()
 							$('#install_text_top').off()
 							$('#install_text_bottom').off()
 							//window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
