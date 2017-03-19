@@ -6,11 +6,11 @@
 
 /* My additions */
 #tagline {
-	margin-bottom: 0.5em;
 	max-width: 100%;
 }
 
 #intro {
+	top: 30px;
 	font-family: 'Lato';
 	font-weight: 100;
 
@@ -2063,14 +2063,16 @@ code {
 /* Header */
 
 	#header {
-		position: relative;
+		position: static;
 		margin: 0;
 		background-image: url("images/overlay.png"), url("../../images/background3.jpg");
 		background-color: #000;
 		background-size: auto, cover;
 		background-position: top left, center center;
 		background-repeat: repeat, no-repeat;
+		/*
 		padding: 10.5em 0 10.5em 0;
+		*/
 		text-align: center;
 		color: #fff;
 	}
@@ -2079,11 +2081,9 @@ code {
 			font-size: 1.8em;
 			line-height: 1.25em;
 			margin-bottom: 0;
-			font-weight:
 		}
 
 		#header header p {
-			margin-top: 0.5em;
 			font-weight: 100;
 			padding: 0;
 			font-size: 1.25em;
@@ -2207,7 +2207,6 @@ code {
 		/* Header */
 
 			#header {
-				padding: 12em 0 12em 0;
 			}
 
 		/* Main Sections */

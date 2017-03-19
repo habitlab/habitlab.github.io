@@ -139,8 +139,12 @@
 		}
 
 		.body_pic {
+			/*
 			max-height: 400px;
 			max-width: 400px;
+			*/
+			max-width: 80%;
+			max-height: 400px;
 			display: block;
 			margin: auto;
 		}
@@ -148,6 +152,11 @@
 		#add_button {
 			background-color: #2FBFC2;
 			margin-top: 100px;
+		}
+
+		.install_button {
+			font-size: 40px;
+			line-height: 40px;
 		}
 
 	</style>
@@ -163,19 +172,20 @@
 			<div id="hdr_background">
 				<header id="intro">
 					<!-- <img id="tagline" src="images/habitlab_logo.png" alt='HabitLab'></img> -->
-					<div style="height: 100px; margin-bottom: 20px;">
-						<img src="images/icon_white.png" style="height: 100%; display: inline-block;"/>
-						<div style="font-family: 'Montserrat'; font-size: 130px; display: inline-block;">
+					<div style="margin-bottom: 20px; padding-top: 30px">
+						<img src="images/icon_white.png" style="height: 57px; display: inline-block;"/>
+						<div style="font-family: 'Montserrat'; font-size: 78px; line-height: 78px; display: inline-block;">
 							HabitLab
 						</div>
 					</div>
-					<h1>Improve your online habits</h1>
+					<h1>Change your online habits</h1>
 					<a href="https://habitlab.github.io/chrome" class="button nm" id="add_button_top">
-						<i class="fa fa-plus-square" aria-hidden="true"></i>
+						<i class="fa fa-chrome" aria-hidden="true"></i>
 						<span id="install_text_top">Add HabitLab to Chrome</span>
 					</a>
 				</header>
 			</div>
+			<!--
 			<div class="hdr_ftr">
 				<div class="row">
 					<div class="2u 12u(narrow)"></div>
@@ -197,6 +207,7 @@
 
 				</div>
 			</div>
+			-->
 		</section>
 
 
@@ -248,9 +259,12 @@
 
 			<header>
 				<div class="container">
+
+					<!--
 					<img id="tagline_2" src="images/icon_black.png" alt='safeswap'></img>
 
 					<h2 class="nm" style="font-size: 70px;">Welcome to <span style="color: #7AB8D4;">HabitLab</span></h2>
+					-->
 
 					<p>
 
@@ -258,7 +272,7 @@
 							HabitLab places <span style="color: #7AB8D4;">interventions</span> between you and distracting websites.
 						</div>
 
-						<img src="images/fb_intervention.png" class="body_pic"/>
+						<img src="images/intervention1.png" class="body_pic"/>
 
 						<div class="nm main_text">
 							<span style="color: #7AB8D4;">Track</span> your online usage, so you can better spend your time online.
@@ -270,11 +284,11 @@
 						<img src="images/pie_chart.png" class="body_pic"/>
 
 						<div class="nm main_text">
-							<span style="color: #7AB8D4;">Customize</span> the websites you want to spend less time on, and see in depth <span style="color: #7AB8D4;">analytics</span> on your usage.
+							<span style="color: #7AB8D4;">Customize</span> the websites you want to spend less time on, and see <span style="color: #7AB8D4;">analytics</span> on which interventions helped the most.
 						</div>
 
 
-						<img src="images/dash.png" class="body_pic"/>
+						<img src="images/dashboard.png" class="body_pic"/>
 
 
 						<!--
@@ -287,8 +301,8 @@
 						<!-- <div class="nm main_text">
 							Try it out <span style="color: #7AB8D4;">here</span>
 						</div> -->
-						<a href="https://habitlab.github.io/chrome" class="button nm" id="add_button">
-						  <span id="install_text_bottom">Add to Chrome</span>
+						<a href="https://habitlab.github.io/chrome" class="button nm install_button" id="add_button">
+						  <i class="fa fa-chrome" aria-hidden="true"></i> <span id="install_text_bottom">Add HabitLab to Chrome</span>
 						</a>
 					</p>
 				</div>
@@ -307,7 +321,7 @@
 			</ul>
 			<div class="copyright">
 				<ul class="menu">
-					<li>&copy; HabitLab. All rights reserved.</li>
+					<li>&copy; Stanford HCI Group. All rights reserved.</li>
 				</ul>
 			</div>
 		</section>
@@ -344,6 +358,7 @@
 		$('#add_button').attr('href', chrome_store_url)
 
 		function show_installing_page() {
+			window.scrollTo(0, 0)
 			window.location.hash = 'installing'
 			$('#mainpage').hide()
 			$('#installing_page').show()
