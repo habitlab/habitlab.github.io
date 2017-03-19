@@ -345,63 +345,7 @@
 		<script src="assets/js/util.js"></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="assets/js/main.js"></script>
-		<script>
-		var extension_id = 'obghclocpdgcekcognpkblghkedcpdgd'
-		if (window.location.hostname == 'habitlab.netlify.com') {
-			extension_id = 'bleifeoekkfhicamkpadfoclfhfmmina'
-		}
-		var chrome_store_url = 'https://chrome.google.com/webstore/detail/habitlab/' + extension_id
-		var chrome_store_url_bare = 'https://chrome.google.com/webstore/detail/' + extension_id
-		var onboarding_url = 'chrome-extension://' + extension_id + '/options.html#onboarding'
-		$('#chrome_webstore_item').attr('href', chrome_store_url_bare)
-		$('#add_button_top').attr('href', chrome_store_url)
-		$('#add_button').attr('href', chrome_store_url)
-
-		function show_installing_page() {
-			window.scrollTo(0, 0)
-			window.location.hash = 'installing'
-			$('#mainpage').hide()
-			$('#installing_page').show()
-		}
-
-
-		if (chrome && chrome.app && chrome.webstore && window.location.protocol == 'https:' && (window.location.hostname == 'habitlab.netlify.com' || window.location.hostname == 'habitlab.stanford.edu')) {
-
-			var install_already_clicked = false
-
-			if (!chrome.app.isInstalled) {
-
-				var habitlab_button_clicked = function(evt) {
-					if (install_already_clicked) {
-						window.location.href = chrome_store_url
-					}
-					evt.preventDefault();
-					evt.stopPropagation();
-					install_already_clicked = true
-					show_installing_page()
-					$('#install_text_top').off()
-					$('#install_text_bottom').off()
-					chrome.webstore.install(
-						chrome_store_url_bare,
-						function() {
-							// success
-							//$('#install_text_top').text('Installing HabitLab')
-							//$('#install_text_bottom').text('Installing HabitLab')
-							//window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
-							window.location.href = onboarding_url
-						},
-						function() {
-							// failure
-							window.location.href = chrome_store_url
-						}
-					)
-				}
-				$('#add_button_top').click(habitlab_button_clicked)
-				$('#add_button').click(habitlab_button_clicked)
-
-			}
-
-		}
+		<script src="index.js"></script>
 		</script>
 
 	</body>
