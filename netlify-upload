@@ -3,6 +3,7 @@
 if [[ -z `git remote | grep netlify` ]]; then
   git remote add netlify git@github.com:habitlab/habitlab.netlify.com.git
 fi
+git add .
 git commit -am "updated website"
 git push netlify master
 echo "https://habitlab.netlify.com"

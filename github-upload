@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ -z `git remote | grep github` ]]; then
+  git remote add github git@github.com:habitlab/habitlab.github.io.git
+fi
+git push github master
+echo "https://habitlab.stanford.edu"
