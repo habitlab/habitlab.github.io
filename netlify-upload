@@ -5,3 +5,4 @@ if [[ -z `git remote | grep netlify` ]]; then
 fi
 git commit -am "updated website"
 git push netlify master
+echo "https://habitlab.netlify.com"
