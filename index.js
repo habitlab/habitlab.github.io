@@ -25,7 +25,7 @@ function show_installing_page() {
 }
 
 
-if (chrome && chrome.app && chrome.webstore && window.location.protocol == 'https:' && (window.location.hostname == 'habitlab.netlify.com' || window.location.hostname == 'habitlab.stanford.edu')) {
+if (chrome && chrome.app && chrome.webstore && window.location.protocol == 'https:' && (window.location.hostname == 'habitlab.netlify.com' || window.location.hostname == 'habitlab.github.io' || window.location.hostname == 'habitlab.stanford.edu')) {
   jQuery(document).ready(function() {
     var install_already_clicked = false
 
