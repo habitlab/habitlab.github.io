@@ -104,7 +104,8 @@ function show_already_installed_page() {
   $('#install_text_top').off()
   $('#install_text_bottom').off()
   set_install_button_text('HabitLab is already installed')
-  set_install_button_url(onboarding_url)
+  //set_install_button_url(onboarding_url)
+  set_install_button_url(chrome_store_url)
 }
 
 var skip_install_check = false
