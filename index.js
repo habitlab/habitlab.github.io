@@ -26,44 +26,44 @@ function show_installing_page() {
 
 
 if (chrome && chrome.app && chrome.webstore && window.location.protocol == 'https:' && (window.location.hostname == 'habitlab.netlify.com' || window.location.hostname == 'habitlab.stanford.edu')) {
+  jQuery(document).ready(function() {
+    var install_already_clicked = false
 
-  var install_already_clicked = false
+    if (!is_habitlab_installed) {
 
-  if (!is_habitlab_installed) {
-
-    var install_habitlab_button_clicked = function(evt) {
-      if (is_habitlab_installed) {
-        return
-      }
-      if (install_already_clicked) {
-        window.location.href = chrome_store_url
-      }
-      evt.preventDefault();
-      evt.stopPropagation();
-      install_already_clicked = true
-      show_installing_page()
-      $('#install_text_top').off()
-      $('#install_text_bottom').off()
-      chrome.webstore.install(
-        chrome_store_url_bare,
-        function() {
-          // success
-          //$('#install_text_top').text('Installing HabitLab')
-          //$('#install_text_bottom').text('Installing HabitLab')
-          //window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
-          window.location.href = onboarding_url
-        },
-        function() {
-          // failure
+      var install_habitlab_button_clicked = function(evt) {
+        if (is_habitlab_installed) {
+          return
+        }
+        if (install_already_clicked) {
           window.location.href = chrome_store_url
         }
-      )
+        evt.preventDefault();
+        evt.stopPropagation();
+        install_already_clicked = true
+        show_installing_page()
+        $('#install_text_top').off()
+        $('#install_text_bottom').off()
+        chrome.webstore.install(
+          chrome_store_url_bare,
+          function() {
+            // success
+            //$('#install_text_top').text('Installing HabitLab')
+            //$('#install_text_bottom').text('Installing HabitLab')
+            //window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
+            window.location.href = onboarding_url
+          },
+          function() {
+            // failure
+            window.location.href = chrome_store_url
+          }
+        )
+      }
+      $('#add_button_top').click(install_habitlab_button_clicked)
+      $('#add_button').click(install_habitlab_button_clicked)
+
     }
-    $('#add_button_top').click(install_habitlab_button_clicked)
-    $('#add_button').click(install_habitlab_button_clicked)
-
-  }
-
+  })
 }
 
 function set_install_button_text(text) {

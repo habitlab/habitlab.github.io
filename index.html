@@ -1,352 +1,496 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>HabitLab</title>		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<script>
-		    if (window.location.host == 'habitlab.github.io') {
-		    	window.location.href = 'https://habitlab.stanford.edu'
-		    }
-			if ((window.location.host == 'habitlab.stanford.edu' || window.location.host == 'habitlab.netlify.com') && window.location.protocol == 'http:') {
-				window.location.protocol = 'https:'
-			}
-		</script>
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="chrome-webstore-item" id="chrome_webstore_item">
+  <head>
+    <title>HabitLab</title>   <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+        if (window.location.host == 'habitlab.github.io') {
+          window.location.href = 'https://habitlab.stanford.edu'
+        }
+      if ((window.location.host == 'habitlab.stanford.edu' || window.location.host == 'habitlab.netlify.com') && window.location.protocol == 'http:') {
+        window.location.protocol = 'https:'
+      }
+    </script>
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="chrome-webstore-item" id="chrome_webstore_item">
 
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!-- <link rel="stylesheet" href="assets/css/old_website.css" /> -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- <link rel="stylesheet" href="assets/css/old_website.css" /> -->
 
-		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-		<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="/favicon.ico" type="image/x-icon">
-		<!-- SEO -->
-		<description style="display: none;">HabitLab</description>
-		<h1 style="display: none;">HabitLab</h1>
-	</head>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- SEO -->
+    <description style="display: none;">HabitLab</description>
+    <h1 style="display: none;">HabitLab</h1>
+  </head>
 
-	<style>
-		#hdr_background {
-			/*background-color: rgba(55, 55, 55, 0.2);*/
-			height: 100%;
-			width: 100%;
-			font-family: helvetica;
-			font-weight: lighter;
-			font-size: 30px;
-		}
+  <style>
+    #hdr_background {
+      /*background-color: rgba(55, 55, 55, 0.2);*/
+      height: 100%;
+      width: 100%;
+      font-family: helvetica;
+      font-weight: lighter;
+      font-size: 30px;
+    }
 
-		.blue_one {
-			background-color: #61A3C5;
-		}
-		.blue_two {
-			background-color: #7AB8D4;
-		}
+    .blue_one {
+      background-color: #61A3C5;
+    }
+    .blue_two {
+      background-color: #7AB8D4;
+    }
 
-		.hdr_ftr {
-			position: absolute;
-			bottom: 0px;
-			background-color: rgba(96, 163, 197, 0.5);
-			height: 100px;
-			width: 100%;
-		}
+    .hdr_ftr {
+      position: absolute;
+      bottom: 0px;
+      background-color: rgba(96, 163, 197, 0.5);
+      height: 100px;
+      width: 100%;
+    }
 
-		.email_bar {
-			display: inline-block;
-			height: 100px;
-			width: 100%;
-			/*padding: 10px;*/
-		}
+    .email_bar {
+      display: inline-block;
+      height: 100px;
+      width: 100%;
+      /*padding: 10px;*/
+    }
 
-		.email {
-			display: inline-block;
-			color: #ccc;
-			background-color: #fff;
-			height: 60%;
-			resize: none;
-			border: 0;
-			margin-top: 20px;
-			margin-bottom: 20px;
-			padding-left: 20px;
-			padding-right: 20px;
+    .email {
+      display: inline-block;
+      color: #ccc;
+      background-color: #fff;
+      height: 60%;
+      resize: none;
+      border: 0;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
 
-		}
-		.subscribe {
-			display: inline-block;
-			height: 60%;
-			background-color: #2FBFC2;
-			margin-top: 20px;
-			margin-bottom: 20px;
-			padding-left: 20px;
-			padding-right: 20px;
-		}
+    }
+    .subscribe {
+      display: inline-block;
+      height: 60%;
+      background-color: #2FBFC2;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
 
-		.ep {
-			/*padding: 10px;*/
-		}
+    .ep {
+      /*padding: 10px;*/
+    }
 
-		.box_padding {
-			padding: 40px;
-		}
+    .box_padding {
+      padding: 40px;
+    }
 
-		.vertical_align {
-			display: flex;
-			align-items: center;
-		}
+    .vertical_align {
+      display: flex;
+      align-items: center;
+    }
 
-		.horizontal_align {
-			margin: auto;
-			display: block;
-		}
+    .horizontal_align {
+      margin: auto;
+      display: block;
+    }
 
-		.hta {
-			text-align: center;
-		}
+    .hta {
+      text-align: center;
+    }
 
-		.box_margin {
-			margin-top: 40px;
-			margin-bottom: 40px !important;
-		}
+    .box_margin {
+      margin-top: 40px;
+      margin-bottom: 40px !important;
+    }
 
-		.intro_info {
-			color: #fff;
-		}
+    .intro_info {
+      color: #fff;
+    }
 
-		.intro_icon {
-			color: #fff;
-			font-size: 120px;
-			margin-bottom: 10px;
-		}
+    .intro_icon {
+      color: #fff;
+      font-size: 120px;
+      margin-bottom: 10px;
+    }
 
-		#subscribe_button {
-			position: relative;
-			left: -4px;
-		}
+    #subscribe_button {
+      position: relative;
+      left: -4px;
+    }
 
-		#subscribe_button:hover {
-			cursor: pointer;
-		}
+    #subscribe_button:hover {
+      cursor: pointer;
+    }
 
-		.main_text{
-			font-size: 30px;
-			color: rgb(102, 102, 102);
-		}
+    .main_text{
+      font-size: 30px;
+      color: rgb(102, 102, 102);
+    }
 
-		.important_text{
-			font-size: 30px;
-			color: rgb(102, 102, 102);
-		}
+    .important_text{
+      font-size: 30px;
+      color: rgb(102, 102, 102);
+    }
 
-		.body_pic {
-			/*
-			max-height: 400px;
-			max-width: 400px;
-			*/
-			max-width: 80%;
-			max-height: 400px;
-			display: block;
-			margin: auto;
-		}
+    .body_pic {
+      /*
+      max-height: 400px;
+      max-width: 400px;
+      */
+      max-width: 100%;
+      max-height: 400px;
+      display: block;
+      margin: auto;
+    }
 
-		#add_button {
-			background-color: #2FBFC2;
-			margin-top: 100px;
-		}
+    #add_button {
+      background-color: #2FBFC2;
+      margin-top: 100px;
+    }
 
-		.install_button {
-			font-size: 40px;
-			line-height: 40px;
-		}
+    .install_button {
+      font-size: 40px;
+      line-height: 40px;
+    }
 
-	</style>
-
-
-	<body>
-
-	<div id="mainpage">
-
-		<!-- Header -->
-
-		<section id="header" class="dark">
-			<div id="hdr_background">
-				<header id="intro">
-					<!-- <img id="tagline" src="images/habitlab_logo.png" alt='HabitLab'></img> -->
-					<div style="margin-bottom: 20px; padding-top: 30px">
-						<img src="images/icon_white.png" style="height: 57px; display: inline-block;"/>
-						<div style="font-family: 'Montserrat'; font-size: 78px; line-height: 78px; display: inline-block;">
-							HabitLab
-						</div>
-					</div>
-					<h1>Change your online habits</h1>
-					<a href="https://habitlab.github.io/chrome" class="button nm" id="add_button_top">
-						<i class="fa fa-chrome" aria-hidden="true"></i>
-						<span id="install_text_top">Add HabitLab to Chrome</span>
-					</a>
-				</header>
-			</div>
-			<!--
-			<div class="hdr_ftr">
-				<div class="row">
-					<div class="2u 12u(narrow)"></div>
-					<div class="8u 12u(narrow) ">
-						<div class="email_bar">
-							<div style="display: inline-table; height: 60px; margin-top: 20px;">
-								<div class="email hta" placeholder="Enter your email" style="display: table-cell; vertical-align: middle;">
-								Enter your email
-								</div>
-							</div>
-							<div style="display: inline-table; height: 60px;">
-								<div id="subscribe_button" class="subscribe hta" style="display: table-cell; vertical-align: middle;">
-								Stay in touch
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="2u 12u(narrow)"></div>
-
-				</div>
-			</div>
-			-->
-		</section>
+  </style>
 
 
-		<!-- First -->
-		<section id="first" class="main">
-			<div>
-				<div class="row blue_one hta">
-					<div class="4u 12u(narrow) blue_one">
-						<section class="box_margin">
-							<!-- <img id="tagline_2" src="images/icon_white.png" alt='safeswap'></img> -->
-							<i class="fa fa-facebook-square intro_icon" aria-hidden="true"></i>
+    <style>
+        /* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background: url('img/b05.png') no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
 
-							<header>
-								<h4>Set Goals</h4>
-							</header>
-							<p class="intro_info hta">
-								Pick sites you want to spend less time on
-							</p>
-						</section>
-					</div>
-					<div class="4u 12u(narrow) blue_two">
-						<section class="box_margin">
-							<!-- <img id="tagline_2" src="images/icon_white.png" alt='safeswap'></img> -->
-							<i class="fa fa-balance-scale intro_icon" aria-hidden="true"></i>
-							<header>
-								<h4>Try Interventions</h4>
-							</header>
-							<p class="intro_info hta">
-								HabitLab tries different interventions each visit
-							</p>
-						</section>
-					</div>
-					<div class="4u 12u(narrow) blue_one">
-						<section class="box_margin">
-							<!-- <img id="tagline_2" src="images/icon_white.png" alt='safeswap'></img> -->
-							<i class="fa fa-pie-chart intro_icon" aria-hidden="true"></i>
-							<!-- Bar chart to show progress  -->
-							<header>
-								<h4>View Progress</h4>
-							</header>
-							<p class="intro_info hta">
-								Learn which interventions work best for you
-							</p>
-						</section>
-					</div>
+        /* jssor slider arrow navigator skin 12 css */
+        /*
+        .jssora12l                  (normal)
+        .jssora12r                  (normal)
+        .jssora12l:hover            (normal mouseover)
+        .jssora12r:hover            (normal mouseover)
+        .jssora12l.jssora12ldn      (mousedown)
+        .jssora12r.jssora12rdn      (mousedown)
+        */
+        .jssora12l, .jssora12r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 30px;
+            height: 46px;
+            cursor: pointer;
+            background: url('img/a12.png') no-repeat;
+            overflow: hidden;
+        }
+        .jssora12l { background-position: -16px -37px; }
+        .jssora12r { background-position: -75px -37px; }
+        .jssora12l:hover { background-position: -136px -37px; }
+        .jssora12r:hover { background-position: -195px -37px; }
+        .jssora12l.jssora12ldn { background-position: -256px -37px; }
+        .jssora12r.jssora12rdn { background-position: -315px -37px; }
+    </style>
 
-				</div>
-			</div>
+  <body>
 
-			<header>
-				<div class="container">
+  <div id="mainpage">
 
-					<!--
-					<img id="tagline_2" src="images/icon_black.png" alt='safeswap'></img>
+    <!-- Header -->
 
-					<h2 class="nm" style="font-size: 70px;">Welcome to <span style="color: #7AB8D4;">HabitLab</span></h2>
-					-->
+    <section id="header" class="dark">
+      <div id="hdr_background">
+        <header id="intro">
+          <!-- <img id="tagline" src="images/habitlab_logo.png" alt='HabitLab'></img> -->
+          <div style="margin-bottom: 20px; padding-top: 30px">
+            <img src="images/icon_white.png" style="height: 57px; display: inline-block;"/>
+            <div style="font-family: 'Montserrat'; font-size: 78px; line-height: 78px; display: inline-block;">
+              HabitLab
+            </div>
+          </div>
+          <h1>Change your online habits</h1>
+          <a href="https://habitlab.github.io/chrome" class="button nm" id="add_button_top">
+            <i class="fa fa-chrome" aria-hidden="true"></i>
+            <span id="install_text_top">Add HabitLab to Chrome</span>
+          </a>
 
-					<p>
+          <div style="line-height: 30px">
+          <a href="http://hci.stanford.edu/"><img src="images/stanford_white.svg" style="height: 30px" /></a> <a href="https://github.com/habitlab/habitlab"><img src="images/github-icon-white.png" style="height: 30px; margin-left: 30px" /></a>
+          <div style="font-size: 12px">HabitLab is an open-source project by the Stanford HCI group.</div>
+          </div>
+        </header>
+      </div>
+      <!--
+      <div class="hdr_ftr">
+        <div class="row">
+          <div class="2u 12u(narrow)"></div>
+          <div class="8u 12u(narrow) ">
+            <div class="email_bar">
+              <div style="display: inline-table; height: 60px; margin-top: 20px;">
+                <div class="email hta" placeholder="Enter your email" style="display: table-cell; vertical-align: middle;">
+                Enter your email
+                </div>
+              </div>
+              <div style="display: inline-table; height: 60px;">
+                <div id="subscribe_button" class="subscribe hta" style="display: table-cell; vertical-align: middle;">
+                Stay in touch
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="2u 12u(narrow)"></div>
 
-						<div class="nm main_text">
-							HabitLab places <span style="color: #7AB8D4;">interventions</span> between you and distracting websites.
-						</div>
-
-						<img src="images/intervention1.png" class="body_pic"/>
-
-						<div class="nm main_text">
-							<span style="color: #7AB8D4;">Track</span> your online usage, so you can better spend your time online.
-						</div>
-
-						<!--
-					-->
-
-						<img src="images/pie_chart.png" class="body_pic"/>
-
-						<div class="nm main_text">
-							<span style="color: #7AB8D4;">Customize</span> the websites you want to spend less time on, and see <span style="color: #7AB8D4;">analytics</span> on which interventions helped the most.
-						</div>
+        </div>
+      </div>
+      -->
+    </section>
 
 
-						<img src="images/dashboard.png" class="body_pic"/>
+    <!-- First -->
+    <section id="first" class="main">
+      <div>
+        <div class="row blue_one hta">
+          <div class="4u 12u(narrow) blue_one">
+            <section class="box_margin">
+              <!-- <img id="tagline_2" src="images/icon_white.png" alt='safeswap'></img> -->
+              <i class="fa fa-facebook-square intro_icon" aria-hidden="true"></i>
+
+              <header>
+                <h4>Set Goals</h4>
+              </header>
+              <p class="intro_info hta">
+                Pick sites you want to spend less time on
+              </p>
+            </section>
+          </div>
+          <div class="4u 12u(narrow) blue_two">
+            <section class="box_margin">
+              <!-- <img id="tagline_2" src="images/icon_white.png" alt='safeswap'></img> -->
+              <i class="fa fa-balance-scale intro_icon" aria-hidden="true"></i>
+              <header>
+                <h4>Try Interventions</h4>
+              </header>
+              <p class="intro_info hta">
+                HabitLab tries different interventions each visit
+              </p>
+            </section>
+          </div>
+          <div class="4u 12u(narrow) blue_one">
+            <section class="box_margin">
+              <!-- <img id="tagline_2" src="images/icon_white.png" alt='safeswap'></img> -->
+              <i class="fa fa-pie-chart intro_icon" aria-hidden="true"></i>
+              <!-- Bar chart to show progress  -->
+              <header>
+                <h4>View Progress</h4>
+              </header>
+              <p class="intro_info hta">
+                Learn which interventions work best for you
+              </p>
+            </section>
+          </div>
+
+        </div>
+      </div>
+
+      <header>
+        <div class="container">
+
+          <!--
+          <img id="tagline_2" src="images/icon_black.png" alt='safeswap'></img>
+
+          <h2 class="nm" style="font-size: 70px;">Welcome to <span style="color: #7AB8D4;">HabitLab</span></h2>
+          -->
+
+          <p>
+
+            <div class="nm main_text">
+              <div>HabitLab uses various <span style="color: #7AB8D4;">interventions</span> to get you off distracting websites</div>
+              <div style="font-size: 20px">Hides newsfeeds, removes clickbait, blocks videos, and more</div>
+            </div>
+
+            <!-- <img src="images/intervention1.png" class="body_pic"/> -->
+
+            <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1280px;height:800px;overflow:hidden;visibility:hidden;">
+              <!-- Loading Screen -->
+              <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+                  <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                  <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+              </div>
+              <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1280px;height:800px;overflow:hidden;">
+                  <div>
+                      <img data-u="image" src="images/intervention1.png" />
+                  </div>
+                  <div>
+                      <img data-u="image" src="images/intervention2.png" />
+                  </div>
+                  <a data-u="any" href="http://www.jssor.com" style="display:none">Simple Fade Slideshow</a>
+                  <!--
+                  <div>
+                      <img data-u="image" src="img/05.jpg" />
+                  </div>
+                  <div>
+                      <img data-u="image" src="img/09.jpg" />
+                  </div>
+                  -->
+              </div>
+              <!-- Bullet Navigator -->
+              <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+                  <!-- bullet navigator item prototype -->
+                  <div data-u="prototype" style="width:16px;height:16px;"></div>
+              </div>
+              <!-- Arrow Navigator -->
+              <span data-u="arrowleft" class="jssora12l" style="top:0px;left:0px;width:30px;height:46px;" data-autocenter="2"></span>
+              <span data-u="arrowright" class="jssora12r" style="top:0px;right:0px;width:30px;height:46px;" data-autocenter="2"></span>
+            </div>
+            <!-- #endregion Jssor Slider End -->
+
+            <div class="nm main_text">
+                <br>
+              <div><span style="color: #7AB8D4;">Customize</span> the websites you want to spend less time on</div>
+              <div style="font-size: 20px">Supports Facebook, Youtube, Reddit, and any other site</div>
+            </div>
 
 
-						<!--
+            <img src="images/dashboard.png" class="body_pic"/>
 
-							Make some gifs
-							mulitple websitre icons, then emtpty outline for custom website
-							fork me on gitbhub ribbon
-						 -->
+            <!--
+            <div class="nm main_text">
+                See <span style="color: #7AB8D4;">analytics</span> on which interventions helped the most.
+              </div>
+              -->
 
-						<!-- <div class="nm main_text">
-							Try it out <span style="color: #7AB8D4;">here</span>
-						</div> -->
-						<a href="https://habitlab.github.io/chrome" class="button nm install_button" id="add_button">
-						  <i class="fa fa-chrome" aria-hidden="true"></i> <span id="install_text_bottom">Add HabitLab to Chrome</span>
-						</a>
-					</p>
-				</div>
-			</header>
+            <div class="nm main_text">
+                <br>
+              <div><span style="color: #7AB8D4;">Track</span> your online usage, so you can better spend your time online.</div>
+            </div>
 
-		</section>
+            <!--
+          -->
 
-		<!-- Footer -->
-		<section id="footer">
-			<ul class="icons">
-				<!-- <li><a href="https://www.linkedin.com/in/lewin-cary-7009b1127" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li> -->
-				<li><a href="https://github.com/habitlab" class="icon fa-github"><span class="label">Github</span></a></li>
-				<!-- <li><a href="https://angel.co/lewin-cary" class="icon fa-angellist"><span class="label">AngelList</span></a></li>
-				<li><a href="http://facebook.com/lewin.cary" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-				<li><a href="http://bitbucket.com/lewincary" class="icon fa-bitbucket"><span class="label">Bitbucket</span></a></li> -->
-			</ul>
-			<div class="copyright">
-				<ul class="menu">
-					<li>&copy; Stanford HCI Group. All rights reserved.</li>
-				</ul>
-			</div>
-		</section>
+            <img src="images/pie_chart.png" class="body_pic"/>
 
-		</div>
+            <!--
 
-		<div id="installing_page" style="display: none">
-		  <h1 style="font-size: 64px">Installing HabitLab, please wait</h1>
-		  <!--
-		  TODO we might want to explain what the permissions are used for here
+              Make some gifs
+              mulitple websitre icons, then emtpty outline for custom website
+              fork me on gitbhub ribbon
+             -->
 
-		  Here's some cats to keep you entertained as you wait.
-		  TODO add a list of giphies
-		  -->
-		</div>
+            <!-- <div class="nm main_text">
+              Try it out <span style="color: #7AB8D4;">here</span>
+            </div> -->
+            <a href="https://habitlab.github.io/chrome" class="button nm install_button" id="add_button">
+              <i class="fa fa-chrome" aria-hidden="true"></i> <span id="install_text_bottom">Add HabitLab to Chrome</span>
+            </a>
+          </p>
+        </div>
+      </header>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-		<script src="assets/js/main.js"></script>
-		<script src="index.js"></script>
-		</script>
+    </section>
 
-	</body>
+    <!-- Footer -->
+    <section id="footer">
+      <ul class="icons">
+        <!-- <li><a href="https://www.linkedin.com/in/lewin-cary-7009b1127" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li> -->
+        <li><a href="https://github.com/habitlab/habitlab" class="icon fa-github"><span class="label">Github</span></a></li>
+        <!-- <li><a href="https://angel.co/lewin-cary" class="icon fa-angellist"><span class="label">AngelList</span></a></li>
+        <li><a href="http://facebook.com/lewin.cary" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+        <li><a href="http://bitbucket.com/lewincary" class="icon fa-bitbucket"><span class="label">Bitbucket</span></a></li> -->
+      </ul>
+      <div class="copyright">
+        <ul class="menu">
+          <li>&copy; Stanford HCI Group. All rights reserved.</li>
+        </ul>
+      </div>
+    </section>
+
+    </div>
+
+    <div id="installing_page" style="display: none">
+      <h1 style="font-size: 64px">Installing HabitLab, please wait</h1>
+      <!--
+      TODO we might want to explain what the permissions are used for here
+
+      Here's some cats to keep you entertained as you wait.
+      TODO add a list of giphies
+      -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="jssor.slider-22.2.16.mini.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+    <script src="index.js"></script>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function ($) {
+
+          var jssor_1_SlideshowTransitions = [
+            {$Duration:1200,$Opacity:2}
+          ];
+
+          var jssor_1_options = {
+            $AutoPlay: true,
+            $SlideshowOptions: {
+              $Class: $JssorSlideshowRunner$,
+              $Transitions: jssor_1_SlideshowTransitions,
+              $TransitionsOrder: 1
+            },
+            $ArrowNavigatorOptions: {
+              $Class: $JssorArrowNavigator$
+            },
+            $BulletNavigatorOptions: {
+              $Class: $JssorBulletNavigator$
+            }
+          };
+
+          var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+          /*responsive code begin*/
+          /*remove responsive code if you don't want the slider scales while window resizing*/
+          function ScaleSlider() {
+              var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+              if (refSize) {
+                  refSize = Math.min(refSize, 600);
+                  jssor_1_slider.$ScaleWidth(refSize);
+              }
+              else {
+                  window.setTimeout(ScaleSlider, 30);
+              }
+          }
+          ScaleSlider();
+          $(window).bind("load", ScaleSlider);
+          $(window).bind("resize", ScaleSlider);
+          $(window).bind("orientationchange", ScaleSlider);
+          /*responsive code end*/
+      });
+    </script>
+  </body>
 </html>
