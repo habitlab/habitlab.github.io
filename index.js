@@ -51,8 +51,10 @@ if (chrome && chrome.app && chrome.webstore && window.location.protocol == 'http
             //$('#install_text_top').text('Installing HabitLab')
             //$('#install_text_bottom').text('Installing HabitLab')
             //window.location.href = 'https://chrome.google.com/webstore/detail/habitlab/obghclocpdgcekcognpkblghkedcpdgd'
-            set_install_button_text('Done installing HabitLab')
-            window.location.href = onboarding_url
+            set_install_button_text('HabitLab has been installed')
+            setTimeout(function() {
+              window.location.href = onboarding_url
+            }, 1000)
           },
           function() {
             // failure
