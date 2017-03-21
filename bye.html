@@ -2,19 +2,59 @@
 <html>
 <head>
 	<title>HabitLab Uninstalled</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/sweetalert2/dist/sweetalert2.min.css">
+  <!--
+  <link rel="stylesheet" href="bootstrap-theme.min.css">
+  -->
+  <!--
+  <script src="bootstrap.min.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  -->
 </head>
 <body>
 
-<h1>HabitLab Uninstalled</h1>
+<div style="margin-left: 20px; margin-right: 20px">
+<h1>Sorry to see you go! HabitLab has been uninstalled</h1>
 
-<div>Thanks for trying HabitLab! If you have feedback so we can make it better, please send it to us at <a href="#" id="address" target="_blank">habitlab-support at cs.stanford.edu</a></div>
+<br>
+<div>Thanks for trying HabitLab! We'd appreciate your feedback so we can make it better!</div>
+<div>Please email us at <a href="#" id="address" target="_blank">(address)</a> or submit anonymous feedback below:</div>
 
-<script>
-var list_url = [['habitlab', 'support'].join('-'), ['cs', 'stanford', 'edu'].join('.')].join('@')
-var address = document.getElementById('address')
-address.setAttribute('href', 'mailto:' + list_url)
-address.innerHTML = list_url
-</script>
+<br>
+
+<textarea class="form-control" rows="3" id="feedback_textarea"></textarea>
+
+<button type="submit" class="btn btn-default" id="submit_button">Submit</button>
+
+<br><br><br>
+Here are some common reasons for uninstalling and how to fix them:
+
+<h3>Disabling Annoying Interventions</h3>
+
+You can disable interventions on the Settings page, which you can access by clicking the <img src="images/habitlab.png" style="height: 16px" /> icon in the Chrome toolbar and clicking "Settings".
+<br><br>
+You can also disable the current intervention by clicking the <img src="images/habitlab.png" style="height: 16px" /> icon in the Chrome toolbar and clicking "Disable Intervention".
+
+<h3>Temporarily Disabling All Interventions</h3>
+
+You can disable HabitLab for the rest of the day by clicking the <img src="images/habitlab.png" style="height: 16px" /> icon in the Chrome toolbar, and checking "Disable HabitLab Today".
+
+<h3>No Interventions Are Shown</h3>
+
+Go to the Settings page and make sure that you have enabled that site on your goals list. You can go to the Settings page by clicking the <img src="images/habitlab.png" style="height: 16px" /> icon in the Chrome toolbar and clicking "Disable Intervention".
+
+<h3>Privacy / Security Concerns</h3>
+
+You can disable logging on the Settings page. Also see our <a href="https://github.com/habitlab/habitlab/wiki/Privacy">Privacy and security page</a>
+
+<h3>If you ever want to reinstall, visit <a href="https://habitlab.stanford.edu/">https://habitlab.stanford.edu/</a></h3>
+
+
+
+</div>
+
+<script src="dist/bye.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

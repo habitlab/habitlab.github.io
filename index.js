@@ -1,3 +1,14 @@
+//require('css!./assets/css/main.css')
+//require('css!./montserrat.css')
+//require('css!./montserrat100.css')
+//require('css!./font-awesome.min.css')
+require('script-loader!./assets/js/jquery.min.js')
+require('script-loader!./assets/js/jquery.scrolly.min.js')
+require('script-loader!./assets/js/skel.min.js')
+require('script-loader!./assets/js/util.js')
+require('script-loader!./jssor.slider-22.2.16.mini.js')
+require('script-loader!./assets/js/main.js')
+
 var extension_id = 'obghclocpdgcekcognpkblghkedcpdgd'
 if (window.location.hostname == 'habitlab.netlify.com') {
   extension_id = 'bleifeoekkfhicamkpadfoclfhfmmina'
