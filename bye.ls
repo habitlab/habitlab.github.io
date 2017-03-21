@@ -1,3 +1,8 @@
+hash_data_unparsed = window.location.hash
+if hash_data_unparsed.startsWith('#')
+  hash_data_unparsed = hash_data_unparsed.substr(1)
+window.location.hash = ''
+
 #require('css!./bootstrap.min.css')
 #require('css!./bootstrap-theme.min.css')
 #require('bootstrap-loader')
@@ -48,10 +53,11 @@ $('#submit_button').click ->
       title: 'Please enter some text'
     }
 
-if params.d?
+unparsed_data = params.d ? hash_data_unparsed
+if unparsed_data? and unparsed_data.length > 0
   base64_js = require('base64-js')
   msgpack_lite = require('msgpack-lite')
-  data = msgpack_lite.decode(base64_js.toByteArray(params.d))
+  data = msgpack_lite.decode(base64_js.toByteArray(unparsed_data))
 
   $.getJSON (base_url + "/add_uninstall?#{$.param(data)}&callback=?"), null, (response) ->
     #console.log response
