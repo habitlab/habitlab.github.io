@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<style>
+body {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+#iframe {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<iframe src="about:blank" id="iframe"></iframe>
+
+<script type="text/javascript">
+document.getElementById('iframe').setAttribute('src', 'https://habitlab.github.io/to' + window.location.search + window.location.hash)
+document.getElementById('iframe').focus()
+</script>
+</body>
+</html>
