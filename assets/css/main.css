@@ -1540,7 +1540,7 @@ code {
 
 	section,
 	article {
-		margin-bottom: 3em;
+		margin-bottom: 1em;
 	}
 
 	section > :last-child,
@@ -1987,7 +1987,7 @@ code {
 	.feature-icon {
 		display: inline-block;
 		position: relative;
-		padding-bottom: 5em;
+		padding-bottom: 1em;
 		margin-bottom: 2.75em;
 		cursor: default;
 	}
@@ -2216,7 +2216,7 @@ code {
 			}
 
 			.main > .content {
-				padding: 4em 0 4em 0;
+				padding: 1em 0 1em 0;
 			}
 
 	}
@@ -2305,7 +2305,7 @@ code {
 
 			#footer {
 				margin: 0 !important;
-				padding: 3em 0 3em 0;
+				padding: 1em 0 1em 0;
 			}
 
 				#footer .copyright {
@@ -2374,7 +2374,7 @@ code {
 		/* Main Sections */
 
 			.main > header {
-				padding: 3em 20px 3em 20px;
+				padding: 1em 20px 1em 20px;
 			}
 
 				.main > header h2 {
@@ -2382,7 +2382,7 @@ code {
 				}
 
 			.main > .content {
-				padding: 3em 20px 3em 20px;
+				padding: 1em 20px 1em 20px;
 			}
 
 				.main > .content h3 {
