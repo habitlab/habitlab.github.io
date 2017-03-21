@@ -28,6 +28,9 @@ params = getUrlParameters()
 
 data = {}
 
+base_url = "//habitlab.herokuapp.com"
+#base_url = "http://localhost:5000"
+
 $('#submit_button').click ->
   feedback = $('#feedback_textarea').val().trim()
   if feedback.length > 0
@@ -37,7 +40,7 @@ $('#submit_button').click ->
     }
     $('#feedback_textarea').val('')
     data.feedback = feedback
-    $.getJSON "//habitlab.herokuapp.com/uninstalled_feedback?#{$.param(data)}&callback=?", null, (response) ->
+    $.getJSON (base_url + "/add_uninstall_feedback?#{$.param(data)}&callback=?"), null, (response) ->
       #console.log response
       return
   else
@@ -50,7 +53,7 @@ if params.d?
   msgpack_lite = require('msgpack-lite')
   data = msgpack_lite.decode(base64_js.toByteArray(params.d))
 
-  $.getJSON "//habitlab.herokuapp.com/uninstalled?#{$.param(data)}&callback=?", null, (response) ->
+  $.getJSON (base_url + "/add_uninstall?#{$.param(data)}&callback=?"), null, (response) ->
     #console.log response
     return
 
