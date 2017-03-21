@@ -3,9 +3,9 @@ if hash_data_unparsed.startsWith('#')
   hash_data_unparsed = hash_data_unparsed.substr(1)
 if hash_data_unparsed.length > 0
   try
-    window.location.hash = ''
     history.pushState("", document.title, window.location.pathname + window.location.search)
   catch
+    window.location.hash = ''
 #require('css!./bootstrap.min.css')
 #require('css!./bootstrap-theme.min.css')
 #require('bootstrap-loader')
