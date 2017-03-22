@@ -35,6 +35,11 @@ getUrlParameters = ->
 params = getUrlParameters()
 
 data = {}
+data.browser = navigator.userAgent
+data.language = navigator.language
+data.languages = navigator.languages
+data.client_timestamp = Date.now()
+data.client_localtime = new Date().toString()
 
 base_url = "https://habitlab.herokuapp.com"
 #base_url = "http://localhost:5000"
@@ -60,7 +65,9 @@ unparsed_data = params.d ? hash_data_unparsed
 if unparsed_data? and unparsed_data.length > 0
   base64_js = require('base64-js')
   msgpack_lite = require('msgpack-lite')
-  data = msgpack_lite.decode(base64_js.toByteArray(unparsed_data))
+  data_new = msgpack_lite.decode(base64_js.toByteArray(unparsed_data))
+  for k,v of data_new
+    data[k] = v
 
   $.getJSON (base_url + "/add_uninstall?#{$.param(data)}&callback=?"), null, (response) ->
     #console.log response
