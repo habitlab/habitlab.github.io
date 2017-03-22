@@ -36,7 +36,7 @@ params = getUrlParameters()
 
 data = {}
 
-base_url = "//habitlab.herokuapp.com"
+base_url = "https://habitlab.herokuapp.com"
 #base_url = "http://localhost:5000"
 
 $('#submit_button').click ->
