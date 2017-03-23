@@ -296,80 +296,40 @@ code {
 		padding: 0;
 	}
 
-	.row {
-		margin: -50px 0 -1px -50px;
-	}
-
 	.row.uniform > * {
 		padding: 50px 0 0 50px;
-	}
-
-	.row.uniform {
-		margin: -50px 0 -1px -50px;
 	}
 
 	.row.\32 00\25 > * {
 		padding: 100px 0 0 100px;
 	}
 
-	.row.\32 00\25 {
-		margin: -100px 0 -1px -100px;
-	}
-
 	.row.uniform.\32 00\25 > * {
 		padding: 100px 0 0 100px;
-	}
-
-	.row.uniform.\32 00\25 {
-		margin: -100px 0 -1px -100px;
 	}
 
 	.row.\31 50\25 > * {
 		padding: 75px 0 0 75px;
 	}
 
-	.row.\31 50\25 {
-		margin: -75px 0 -1px -75px;
-	}
-
 	.row.uniform.\31 50\25 > * {
 		padding: 75px 0 0 75px;
-	}
-
-	.row.uniform.\31 50\25 {
-		margin: -75px 0 -1px -75px;
 	}
 
 	.row.\35 0\25 > * {
 		padding: 25px 0 0 25px;
 	}
 
-	.row.\35 0\25 {
-		margin: -25px 0 -1px -25px;
-	}
-
 	.row.uniform.\35 0\25 > * {
 		padding: 25px 0 0 25px;
-	}
-
-	.row.uniform.\35 0\25 {
-		margin: -25px 0 -1px -25px;
 	}
 
 	.row.\32 5\25 > * {
 		padding: 12.5px 0 0 12.5px;
 	}
 
-	.row.\32 5\25 {
-		margin: -12.5px 0 -1px -12.5px;
-	}
-
 	.row.uniform.\32 5\25 > * {
 		padding: 12.5px 0 0 12.5px;
-	}
-
-	.row.uniform.\32 5\25 {
-		margin: -12.5px 0 -1px -12.5px;
 	}
 
 	.\31 2u, .\31 2u\24 {
@@ -509,80 +469,40 @@ code {
 			padding: 0;
 		}
 
-		.row {
-			margin: -40px 0 -1px -40px;
-		}
-
 		.row.uniform > * {
 			padding: 40px 0 0 40px;
-		}
-
-		.row.uniform {
-			margin: -40px 0 -1px -40px;
 		}
 
 		.row.\32 00\25 > * {
 			padding: 80px 0 0 80px;
 		}
 
-		.row.\32 00\25 {
-			margin: -80px 0 -1px -80px;
-		}
-
 		.row.uniform.\32 00\25 > * {
 			padding: 80px 0 0 80px;
-		}
-
-		.row.uniform.\32 00\25 {
-			margin: -80px 0 -1px -80px;
 		}
 
 		.row.\31 50\25 > * {
 			padding: 60px 0 0 60px;
 		}
 
-		.row.\31 50\25 {
-			margin: -60px 0 -1px -60px;
-		}
-
 		.row.uniform.\31 50\25 > * {
 			padding: 60px 0 0 60px;
-		}
-
-		.row.uniform.\31 50\25 {
-			margin: -60px 0 -1px -60px;
 		}
 
 		.row.\35 0\25 > * {
 			padding: 20px 0 0 20px;
 		}
 
-		.row.\35 0\25 {
-			margin: -20px 0 -1px -20px;
-		}
-
 		.row.uniform.\35 0\25 > * {
 			padding: 20px 0 0 20px;
-		}
-
-		.row.uniform.\35 0\25 {
-			margin: -20px 0 -1px -20px;
 		}
 
 		.row.\32 5\25 > * {
 			padding: 10px 0 0 10px;
 		}
 
-		.row.\32 5\25 {
-			margin: -10px 0 -1px -10px;
-		}
-
 		.row.uniform.\32 5\25 > * {
 			padding: 10px 0 0 10px;
-		}
-
-		.row.uniform.\32 5\25 {
-			margin: -10px 0 -1px -10px;
 		}
 
 		.\31 2u\28wide\29, .\31 2u\24\28wide\29 {
@@ -724,80 +644,40 @@ code {
 			padding: 0;
 		}
 
-		.row {
-			margin: -30px 0 -1px -30px;
-		}
-
 		.row.uniform > * {
 			padding: 30px 0 0 30px;
-		}
-
-		.row.uniform {
-			margin: -30px 0 -1px -30px;
 		}
 
 		.row.\32 00\25 > * {
 			padding: 60px 0 0 60px;
 		}
 
-		.row.\32 00\25 {
-			margin: -60px 0 -1px -60px;
-		}
-
 		.row.uniform.\32 00\25 > * {
 			padding: 60px 0 0 60px;
-		}
-
-		.row.uniform.\32 00\25 {
-			margin: -60px 0 -1px -60px;
 		}
 
 		.row.\31 50\25 > * {
 			padding: 45px 0 0 45px;
 		}
 
-		.row.\31 50\25 {
-			margin: -45px 0 -1px -45px;
-		}
-
 		.row.uniform.\31 50\25 > * {
 			padding: 45px 0 0 45px;
-		}
-
-		.row.uniform.\31 50\25 {
-			margin: -45px 0 -1px -45px;
 		}
 
 		.row.\35 0\25 > * {
 			padding: 15px 0 0 15px;
 		}
 
-		.row.\35 0\25 {
-			margin: -15px 0 -1px -15px;
-		}
-
 		.row.uniform.\35 0\25 > * {
 			padding: 15px 0 0 15px;
-		}
-
-		.row.uniform.\35 0\25 {
-			margin: -15px 0 -1px -15px;
 		}
 
 		.row.\32 5\25 > * {
 			padding: 7.5px 0 0 7.5px;
 		}
 
-		.row.\32 5\25 {
-			margin: -7.5px 0 -1px -7.5px;
-		}
-
 		.row.uniform.\32 5\25 > * {
 			padding: 7.5px 0 0 7.5px;
-		}
-
-		.row.uniform.\32 5\25 {
-			margin: -7.5px 0 -1px -7.5px;
 		}
 
 		.\31 2u\28normal\29, .\31 2u\24\28normal\29 {
@@ -939,80 +819,40 @@ code {
 			padding: 0;
 		}
 
-		.row {
-			margin: -25px 0 -1px -25px;
-		}
-
 		.row.uniform > * {
 			padding: 25px 0 0 25px;
-		}
-
-		.row.uniform {
-			margin: -25px 0 -1px -25px;
 		}
 
 		.row.\32 00\25 > * {
 			padding: 50px 0 0 50px;
 		}
 
-		.row.\32 00\25 {
-			margin: -50px 0 -1px -50px;
-		}
-
 		.row.uniform.\32 00\25 > * {
 			padding: 50px 0 0 50px;
-		}
-
-		.row.uniform.\32 00\25 {
-			margin: -50px 0 -1px -50px;
 		}
 
 		.row.\31 50\25 > * {
 			padding: 37.5px 0 0 37.5px;
 		}
 
-		.row.\31 50\25 {
-			margin: -37.5px 0 -1px -37.5px;
-		}
-
 		.row.uniform.\31 50\25 > * {
 			padding: 37.5px 0 0 37.5px;
-		}
-
-		.row.uniform.\31 50\25 {
-			margin: -37.5px 0 -1px -37.5px;
 		}
 
 		.row.\35 0\25 > * {
 			padding: 12.5px 0 0 12.5px;
 		}
 
-		.row.\35 0\25 {
-			margin: -12.5px 0 -1px -12.5px;
-		}
-
 		.row.uniform.\35 0\25 > * {
 			padding: 12.5px 0 0 12.5px;
-		}
-
-		.row.uniform.\35 0\25 {
-			margin: -12.5px 0 -1px -12.5px;
 		}
 
 		.row.\32 5\25 > * {
 			padding: 6.25px 0 0 6.25px;
 		}
 
-		.row.\32 5\25 {
-			margin: -6.25px 0 -1px -6.25px;
-		}
-
 		.row.uniform.\32 5\25 > * {
 			padding: 6.25px 0 0 6.25px;
-		}
-
-		.row.uniform.\32 5\25 {
-			margin: -6.25px 0 -1px -6.25px;
 		}
 
 		.\31 2u\28narrow\29, .\31 2u\24\28narrow\29 {
@@ -1154,80 +994,40 @@ code {
 			padding: 0;
 		}
 
-		.row {
-			margin: -20px 0 -1px -20px;
-		}
-
 		.row.uniform > * {
 			padding: 20px 0 0 20px;
-		}
-
-		.row.uniform {
-			margin: -20px 0 -1px -20px;
 		}
 
 		.row.\32 00\25 > * {
 			padding: 40px 0 0 40px;
 		}
 
-		.row.\32 00\25 {
-			margin: -40px 0 -1px -40px;
-		}
-
 		.row.uniform.\32 00\25 > * {
 			padding: 40px 0 0 40px;
-		}
-
-		.row.uniform.\32 00\25 {
-			margin: -40px 0 -1px -40px;
 		}
 
 		.row.\31 50\25 > * {
 			padding: 30px 0 0 30px;
 		}
 
-		.row.\31 50\25 {
-			margin: -30px 0 -1px -30px;
-		}
-
 		.row.uniform.\31 50\25 > * {
 			padding: 30px 0 0 30px;
-		}
-
-		.row.uniform.\31 50\25 {
-			margin: -30px 0 -1px -30px;
 		}
 
 		.row.\35 0\25 > * {
 			padding: 10px 0 0 10px;
 		}
 
-		.row.\35 0\25 {
-			margin: -10px 0 -1px -10px;
-		}
-
 		.row.uniform.\35 0\25 > * {
 			padding: 10px 0 0 10px;
-		}
-
-		.row.uniform.\35 0\25 {
-			margin: -10px 0 -1px -10px;
 		}
 
 		.row.\32 5\25 > * {
 			padding: 5px 0 0 5px;
 		}
 
-		.row.\32 5\25 {
-			margin: -5px 0 -1px -5px;
-		}
-
 		.row.uniform.\32 5\25 > * {
 			padding: 5px 0 0 5px;
-		}
-
-		.row.uniform.\32 5\25 {
-			margin: -5px 0 -1px -5px;
 		}
 
 		.\31 2u\28mobile\29, .\31 2u\24\28mobile\29 {
