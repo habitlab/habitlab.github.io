@@ -15,9 +15,9 @@ require('script-loader!./bootstrap.min.js')
 swal = require('./bower_components/sweetalert2/dist/sweetalert2.min.js')
 window.swal = swal
 
-list_url = [['habitlab', 'support'].join('-'), ['cs', 'stanford', 'edu'].join('.')].join('@')
+list_url = [['habitlab', 'feedback'].join('-'), ['cs', 'stanford', 'edu'].join('.')].join('@')
 $(document).ready ->
-  $('#address').attr('href', 'mailto:' + list_url)
+  $('#address').attr('href', ['ma', 'il', 'to'].join('') + ':' + list_url)
   $('#address').text(list_url)
 
 getUrlParameters = ->
