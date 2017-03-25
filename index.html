@@ -227,7 +227,7 @@
         <header id="intro">
 
           <div style="width: 100%; height: 50px">
-            <a href="http://hci.stanford.edu/"><img id="stanford_logo" src="images/stanford_white_200px.png" style="height: 40px; position: absolute; left: 10px; top: 10px" /></a>
+            <a href="http://hci.stanford.edu/"><img id="stanford_logo" src="images/stanford_white.svg" style="height: 40px; position: absolute; left: 10px; top: 10px" /></a>
             <a href="https://github.com/habitlab/habitlab"><img src="images/github-icon-white.png" style="height: 40px; position: absolute; right: 10px; top: 10px" /></a>
           </div>
           <!-- <img id="tagline" src="images/habitlab_logo.png" alt='HabitLab'></img> -->
@@ -588,8 +588,10 @@ if (window.location.host == 'habitlab.github.io') {
 
 </script>
 <script>
-if (document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Shape", "1.0")) {
-  document.getElementById('stanford_logo').setAttribute('src', 'images/stanford_white.svg')
+if (document.implementation && document.implementation.hasFeature && document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Shape", "1.0")) {
+  //document.getElementById('stanford_logo').setAttribute('src', 'images/stanford_white.svg')
+} else {
+  document.getElementById('stanford_logo').setAttribute('src', 'images/stanford_white_200px.png')
 }
 </script>
   </body>
