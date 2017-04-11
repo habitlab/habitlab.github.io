@@ -1,6 +1,8 @@
 [
   {
-    "title": "Blocks links to gifs",
+    "name": "reddit/block_gif_links",
+    "goal": "reddit/spend_less_time",
+    "description": "Blocks links to gifs",
     "numusers": 200,
     "stars": 4.5,
     "comments": [
@@ -15,7 +17,9 @@
     ]
   },
   {
-    "title": "Removes comments",
+    "name": "reddit/remove_comments",
+    "goal": "reddit/spend_less_time",
+    "description": "Removes comments",
     "numusers": 300,
     "stars": 4,
     "comments": [
