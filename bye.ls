@@ -46,19 +46,24 @@ base_url = "https://habitlab.herokuapp.com"
 
 $('#submit_button').click ->
   feedback = $('#feedback_textarea').val().trim()
-  if feedback.length > 0
+  uninstall_reasons = []
+  for x in document.querySelectorAll('input[type=checkbox]')
+    if x.checked
+      uninstall_reasons.push x.getAttribute('description')
+  if feedback.length > 0 or uninstall_reasons.length > 0
     swal {
       title: 'Thanks for your feedback!'
       text: 'Your feedback has been submitted. Thank you for helping us improve HabitLab!'
     }
-    $('#feedback_textarea').val('')
+    #$('#feedback_textarea').val('')
     data.feedback = feedback
+    data.uninstall_reasons = uninstall_reasons
     $.getJSON (base_url + "/add_uninstall_feedback?#{$.param(data)}&callback=?"), null, (response) ->
       #console.log response
       return
   else
     swal {
-      title: 'Please enter some text'
+      title: 'Please check an option or enter some text'
     }
 
 unparsed_data = params.d ? hash_data_unparsed
@@ -68,9 +73,10 @@ if unparsed_data? and unparsed_data.length > 0
   data_new = msgpack_lite.decode(base64_js.toByteArray(unparsed_data))
   for k,v of data_new
     data[k] = v
-
-  $.getJSON (base_url + "/add_uninstall?#{$.param(data)}&callback=?"), null, (response) ->
-    #console.log response
-    return
+  
+  if window.location.host == 'habitlab.github.io'
+    $.getJSON (base_url + "/add_uninstall?#{$.param(data)}&callback=?"), null, (response) ->
+      #console.log response
+      return
 
 
