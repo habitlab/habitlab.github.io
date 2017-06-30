@@ -57,6 +57,10 @@ function log_action_for_user(userid, action, callback) {
     domain: domain,
     action: action
   })).then(function() {
+    console.log('completed log_action_for_user')
+    console.log(userid)
+    console.log(domain)
+    console.log(action)
     if (callback != null) {
       callback()
     }
