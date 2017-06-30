@@ -35,8 +35,64 @@ function show_installing_page() {
   //$('#installing_page').show()
 }
 
+var userid = localStorage.getItem('userid')
 
-if (chrome && chrome.app && chrome.webstore && window.location.protocol == 'https:' && (window.location.hostname == 'habitlab.netlify.com' || window.location.hostname == 'habitlab.github.io' || window.location.hostname == 'habitlab.stanford.edu')) {
+if (userid == null) {
+  userid = generate_random_id()
+  localStorage.setItem('userid', userid)
+}
+
+function log_visit_for_user(userid, callback) {
+  var domain = window.location.host
+  jQuery.getJSON('http://localhost:5000/logwebvisit?callback=?&' + jQuery.param({
+    userid: userid,
+    domain: domain,
+    action: 'visit'
+  })).then(function() {
+    if (callback != null) {
+      callback()
+    }
+  })
+}
+
+function log_action_for_user(userid, action, callback) {
+  var domain = window.location.host
+  jQuery.getJSON('http://localhost:5000/logwebvisit?callback=?&' + jQuery.param({
+    userid: userid,
+    domain: domain,
+    action: action
+  })).then(function() {
+    if (callback != null) {
+      callback()
+    }
+  })
+}
+
+function log_visit_for_user(userid, callback) {
+  log_action_for_user(userid, 'visit', callback)
+}
+
+function log_install_clicked_for_user(userid, callback) {
+  log_action_for_user(userid, 'install_clicked', callback)
+}
+
+function log_install_accept_for_user(userid, callback) {
+  log_action_for_user(userid, 'install_accept', callback)
+}
+
+function log_install_reject_for_user(userid, callback) {
+  log_action_for_user(userid, 'install_reject', callback)
+}
+
+var is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(window.navigator.userAgent)
+
+if (chrome && chrome.app && chrome.webstore && !is_mobile && window.location.protocol == 'https:' && (window.location.hostname == 'habitlab.netlify.com' || window.location.hostname == 'habitlab.github.io' || window.location.hostname == 'habitlab.stanford.edu')) {
+
+  log_visit_for_user(userid)
+  window.history.pushState({}, null, '/#hashdata|source=webvisit|userid=' + userid)
+  window.history.pushState({}, null, '/')
+
+
   jQuery(document).ready(function() {
     var install_already_clicked = false
 
@@ -49,6 +105,7 @@ if (chrome && chrome.app && chrome.webstore && window.location.protocol == 'http
         if (install_already_clicked) {
           window.location.href = chrome_store_url
         }
+        log_install_clicked_for_user(userid)
         evt.preventDefault();
         evt.stopPropagation();
         install_already_clicked = true
@@ -66,10 +123,13 @@ if (chrome && chrome.app && chrome.webstore && window.location.protocol == 'http
             //setTimeout(function() {
             //  window.location.href = onboarding_url
             //}, 2000)
+            log_install_accept_for_user(userid)
           },
           function() {
             // failure
-            window.location.href = chrome_store_url
+            log_install_reject_for_user(userid, function() {
+              window.location.href = chrome_store_url
+            })
           }
         )
       }
@@ -141,3 +201,4 @@ if (!skip_install_check) {
     check_habitlab_already_installed = setInterval(is_habitlab_already_installed_checker, 1000)
   }
 }
+

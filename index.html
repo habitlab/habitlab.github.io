@@ -608,6 +608,14 @@ var add_translate_timer = setInterval(function() {
   }
 }, 1000);
 
+function generate_random_id() {
+  var output = ''
+  for (var i = 0; i < 24; ++i) {
+    output += '0123456789abcdef'[Math.floor(Math.random() * 16)]
+  }
+  return output
+}
+
 </script>
 
   </body>
