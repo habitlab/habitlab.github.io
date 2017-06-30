@@ -35,6 +35,14 @@ function show_installing_page() {
   //$('#installing_page').show()
 }
 
+function generate_random_id() {
+  var output = ''
+  for (var i = 0; i < 24; ++i) {
+    output += '0123456789abcdef'[Math.floor(Math.random() * 16)]
+  }
+  return output
+}
+
 var userid = localStorage.getItem('userid')
 
 if (userid == null) {
