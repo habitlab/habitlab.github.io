@@ -50,22 +50,9 @@ if (userid == null) {
   localStorage.setItem('userid', userid)
 }
 
-function log_visit_for_user(userid, callback) {
-  var domain = window.location.host
-  jQuery.getJSON('http://localhost:5000/logwebvisit?callback=?&' + jQuery.param({
-    userid: userid,
-    domain: domain,
-    action: 'visit'
-  })).then(function() {
-    if (callback != null) {
-      callback()
-    }
-  })
-}
-
 function log_action_for_user(userid, action, callback) {
   var domain = window.location.host
-  jQuery.getJSON('http://localhost:5000/logwebvisit?callback=?&' + jQuery.param({
+  jQuery.getJSON('https://habitlab.herokuapp.com/logwebvisit?callback=?&' + jQuery.param({
     userid: userid,
     domain: domain,
     action: action
