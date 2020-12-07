@@ -4,6 +4,10 @@ var webpack = require('webpack')
 //var BabiliPlugin = require("babili-webpack-plugin")
 
 module.exports = {
+  mode: 'production',
+  optimization: {
+    minimize: true //Update this to true or false
+  },
   watch: true,
   entry: {
     'index': './index.js',
@@ -13,15 +17,15 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: "[name].js"
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin()
-  ],
+  //plugins: [
+  //  new webpack.optimize.UglifyJsPlugin()
+  //],
   //plugins: [
   //  new BabiliPlugin({}, {comments: false, sourceMap: false})
   //],
   module: {
     //loaders: [
-    loaders: [
+    rules: [
       {
         test: /\.ls$/,
         loader: 'livescript-loader'
