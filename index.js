@@ -197,3 +197,5 @@ if (!skip_install_check) {
   }
 }
 
+require('script-loader!./match_info_list.js')
+require('script-loader!./translations.js')

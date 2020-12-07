@@ -176,6 +176,83 @@
       height: 128px;
     }
 
+  #tx-live-lang-picker {
+    overflow-y: auto;
+    max-height: 385px;
+  }
+
+  .qual-container-outer {
+    /* display: block; */
+    display: none;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+  }
+  .qual-container {
+    display: inline-block;
+    line-height: 32px;
+    background-color: rgba( 0,0,0,1 );
+    /* background-color: rgba( 0,0,0,0.75 ); */
+    box-shadow: 0 0 4px rgba( 0,0,0,0.3 );
+    color: #fff;
+    font-size: 14px;
+    border-radius: 0 2px 0 0;
+    -webkit-border-radius: 0 2px 0 0;
+  }
+  .qual-innerdiv {
+    display: inline-block;
+    text-align: center;
+    /* height: 36px; */
+    line-height: 32px;
+    padding: 1px 16px;
+    border-bottom: 2px solid #006f9f;
+    /* background-color: darkred;
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px; */
+  }
+
+  #stars {
+    color: white;
+    cursor: pointer;
+  }
+
+  #tx-live-lang-container {
+    display: none;
+  }
+
+  .txlive-langselector-toggle {
+    background-color: black;
+  }
+
+.txlive-langselector { position:fixed;z-index:999999;min-width: 120px;line-height:32px;background-color:rgba( 0,0,0,0.75 );box-shadow: 0 0 4px rgba( 0,0,0,0.3 );color: #fff;font-size: 14px;font-family: inherit; }
+.txlive-langselector * { margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;border-radius: 0;-moz-border-radius:0;-webkit-border-radius:0;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-border-radius:0;opacity:1; }
+.txlive-langselector.txlive-langselector-topleft { top:0;left:0;right:auto;bottom:auto;border-radius: 0 0 2px 0;-moz-border-radius: 0 0 2px 0;-webkit-border-radius: 0 0 2px 0; }
+.txlive-langselector.txlive-langselector-topright { top:0;left:auto;right:0;bottom:auto;border-radius: 0 2px 0 0;-moz-border-radius: 0 2px 0 0;-webkit-border-radius: 0 2px 0 0; }
+.txlive-langselector.txlive-langselector-bottomleft { top:auto;left:0;right:auto;bottom:0;border-radius: 0 2px 0 0;-moz-border-radius: 0 2px 0 0;-webkit-border-radius: 0 2px 0 0; }
+.txlive-langselector.txlive-langselector-bottomright { top:auto;left:auto;right:0;bottom:0;border-radius: 2px 0 0 0;-moz-border-radius: 2px 0 0 0;-webkit-border-radius: 2px 0 0 0; }
+.txlive-langselector .txlive-langselector-toggle { overflow: hidden;display: block;padding:2px 16px;width: 100%;height:36px;cursor:pointer;cursor:hand; }
+.txlive-langselector.txlive-langselector-topleft .txlive-langselector-toggle { overflow: hidden;display: block;border-top:2px solid #006f9f;padding:2px 16px;height:36px;line-height:32px;cursor:pointer;cursor:hand; }
+.txlive-langselector.txlive-langselector-topright .txlive-langselector-toggle { overflow: hidden;display: block;border-top:2px solid #006f9f;padding:2px 16px;height:36px;line-height:32px;cursor:pointer;cursor:hand; }
+.txlive-langselector.txlive-langselector-bottomleft .txlive-langselector-toggle { overflow: hidden;display: block;border-bottom:2px solid #006f9f;padding:2px 16px;height:36px;line-height:32px;cursor:pointer;cursor:hand; }
+.txlive-langselector.txlive-langselector-bottomright .txlive-langselector-toggle { overflow: hidden;display: block;border-bottom:2px solid #006f9f;padding:2px 16px;height:36px;line-height:32px;cursor:pointer;cursor:hand; }
+.txlive-langselector .txlive-langselector-current { float: left;padding: 0;max-width: 200px;overflow:hidden;white-space: nowrap;text-overflow:ellipsis; }
+.txlive-langselector .txlive-langselector-marker { float: right;display: block;position:relative;width:0;height:0;margin-left:8px;margin-top: 13px;border-right:4px dashed transparent;border-left:4px dashed transparent;}
+.txlive-langselector-topright .txlive-langselector-marker,.txlive-langselector-topleft .txlive-langselector-marker {border-top:4px solid #fff;}
+.txlive-langselector-bottomright .txlive-langselector-marker,.txlive-langselector-bottomleft .txlive-langselector-marker {border-bottom:4px solid #fff;}
+.txlive-langselector-list { position:absolute;width: 100%;margin:0;padding:10px 0;display:none;background-color:#eaf1f7;box-shadow: 0 0 4px rgba( 0,0,0,0.3 );color:#666;list-style-type:none; }
+.txlive-langselector-list.txlive-langselector-list-opened { display:block; }
+.txlive-langselector-list > li {padding:0 16px;width:100%;overflow:hidden;white-space: nowrap;text-overflow:ellipsis;}
+.txlive-langselector-list > li:hover {background-color:#b0b9c1;color:#fff;cursor:pointer;cursor:hand;}
+.txlive-langselector-topright > .txlive-langselector-list {top:40px;left:auto;right:0;bottom:auto;border-bottom: 1px solid #f4f7f9;}
+.txlive-langselector-topleft > .txlive-langselector-list {top:40px;left:0;right:auto;bottom:auto;border-bottom: 1px solid #f4f7f9;}
+.txlive-langselector-bottomright > .txlive-langselector-list {top:auto;left:auto;right:0;bottom:40px;border-top: 1px solid #f4f7f9;}
+.txlive-langselector-bottomleft > .txlive-langselector-list {top:auto;left:0;right:auto;bottom:40px;border-top: 1px solid #f4f7f9;}
+.txlive-langselector-topright > .txlive-langselector-list,.txlive-langselector-bottomright > .txlive-langselector-list {border-radius: 2px 0 0 2px;-moz-border-radius: 2px 0 0 2px;-webkit-border-radius: 2px 0 0 2px;}
+.txlive-langselector-topleft > .txlive-langselector-list,.txlive-langselector-bottomleft > .txlive-langselector-list {border-radius: 0 2px 2px 0;-moz-border-radius: 0 2px 2px 0;-webkit-border-radius: 0 2px 2px 0;}
+
   </style>
 
 
@@ -483,7 +560,7 @@
               Try it out <span style="color: #7AB8D4;">here</span>
             </div> -->
             <a href="https://habitlab.github.io/chrome" class="button nm install_button" id="add_button" trdl="chrome">
-              <i class="fa fa-chrome" aria-hidden="true" style="margin-right: 5px"></i> <span id="install_text_bottom">Add HabitLab to Chrome</span>
+              <i class="fa fa-chrome" aria-hidden="true" style="margin-right: 5px"></i> <span id="install_text_bottom" translatable="true">Add HabitLab to Chrome</span>
             </a>
 
             <div class="nm main_text">
@@ -557,6 +634,34 @@
         </ul>
       </div>
     </section>
+
+    <div class="qual-container-outer notranslate" id="helpful_container">
+      <div class="qual-container">
+        <div class="qual-innerdiv" id="helpful"><span id="was_this_page_helpful">Was this page helpful?</span> <span id="stars"><span id="star0">☆</span> <span id="star1">☆</span> <span id="star2">☆</span> <span id="star3">☆</span> <span id="star4">☆</span></span> <a href="#" id="view_in_english_link" onclick="viewInNextBestLang()"><span id="view_eng_lang_emoji">🇺🇸</span> <span id="view_eng_lang_name">English</span></a></div>
+      </div>
+    </div>
+
+    <div id="tx-live-lang-container" class="txlive-langselector txlive-langselector-bottomleft notranslate">
+      <ul id="tx-live-lang-picker" class="txlive-langselector-list notranslate">
+        <!-- <li data-value="en">English</li>
+        <li data-value="nl">Nederlands</li> -->
+      </ul>
+      <!-- <ul id="tx-live-lang-picker" class="txlive-langselector-list notranslate">
+        <li data-value="en">English</li>
+        <li data-value="zh_CN">中文 (中国)</li>
+        <li data-value="nl">Nederlands</li>
+        <li data-value="fr">Français</li>
+        <li data-value="ru">Русский</li>
+        <li data-value="tr">Türkçe</li>
+        <li data-value="de">Deutsch</li>
+        <li data-value="pt">Português</li>
+        <li onclick="window.location.href=&quot;https://www.transifex.com/gkovacs/unetbootin-website/&quot;" data-value="en">Translate</li>
+      </ul> -->
+      <div class="txlive-langselector-toggle notranslate" id="tx-live-lang-toggle" onmousedown="langSelectorMouseDown()">
+        <span class="txlive-langselector-current notranslate" id="tx-live-lang-current">English</span>
+        <span class="txlive-langselector-marker notranslate"></span>
+      </div>
+    </div>
 
     <!-- Scripts -->
     <!--
@@ -646,7 +751,7 @@ if (document.implementation && document.implementation.hasFeature && document.im
   document.getElementById('stanford_logo').setAttribute('src', 'images/stanford_white_200px.png')
 }
 </script>
-<script type="text/javascript">window.liveSettings={api_key:"a2ca9690ebac41a7b423e165d4e66eb5"}</script>
+<!-- <script type="text/javascript">window.liveSettings={api_key:"a2ca9690ebac41a7b423e165d4e66eb5"}</script>
 <script type="text/javascript" src="//cdn.transifex.com/live.js"></script>
 
 <script>
@@ -663,7 +768,7 @@ var add_translate_timer = setInterval(function() {
   }
 }, 1000);
 
-</script>
+</script> -->
 
   </body>
 </html>
