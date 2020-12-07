@@ -81,7 +81,7 @@ function log_install_reject_for_user(userid, callback) {
 
 var is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(window.navigator.userAgent)
 
-if (chrome && chrome.app && chrome.webstore && !is_mobile && window.location.protocol == 'https:' && (window.location.hostname == 'habitlab.netlify.com' || window.location.hostname == 'habitlab.github.io' || window.location.hostname == 'habitlab.stanford.edu')) {
+if ((typeof(chrome) !== 'undefined') && chrome && chrome.app && chrome.webstore && !is_mobile && window.location.protocol == 'https:' && (window.location.hostname == 'habitlab.netlify.com' || window.location.hostname == 'habitlab.github.io' || window.location.hostname == 'habitlab.stanford.edu')) {
 
   log_visit_for_user(userid)
   window.history.pushState({}, null, '/#hashdata|source=webvisit|userid=' + userid)
