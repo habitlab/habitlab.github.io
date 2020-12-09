@@ -210,7 +210,7 @@ function addLog(eventType, data, callback, timeLimit) {
     data.MtLang = mtLang;
   }
   // user id and session id also send
-  var dataVersion = 4;
+  var dataVersion = 5;
   var time = Date.now();
   var insert_id = generateUUID();
   var rows = {
