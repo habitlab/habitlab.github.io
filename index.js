@@ -197,5 +197,27 @@ if (!skip_install_check) {
   }
 }
 
-require('script-loader!./match_info_list.js')
-require('script-loader!./translations.js')
+if (window.location.host === "www.transifex.com" || window.location.search.startsWith('?tfxpreview') || window.location.search.startsWith('?transifex')) {
+  (function() {
+    window.liveSettings={api_key:"a2ca9690ebac41a7b423e165d4e66eb5"};
+    var script_tag = document.createElement('script');
+    script_tag.setAttribute('src', '//cdn.transifex.com/live.js');
+    document.head.appendChild(script_tag);
+
+    var add_translate_timer = setInterval(function() {
+      var language_picker = document.getElementById('tx-live-lang-picker')
+      if (language_picker) {
+        clearInterval(add_translate_timer);
+        var help_translate = document.createElement('li');
+        help_translate.setAttribute('onclick', 'window.location.href="https://www.transifex.com/gkovacs/habitlab-website/"');
+        help_translate.setAttribute('data-value', 'en');
+        help_translate.innerHTML = 'Translate';
+        language_picker.appendChild(help_translate);
+        document.querySelector('#tx-live-lang-container').style.display = 'block';
+      }
+    }, 100);
+  })();
+} else {
+  require('script-loader!./match_info_list.js');
+  require('script-loader!./translations.js');
+}
