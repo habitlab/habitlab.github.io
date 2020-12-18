@@ -197,7 +197,7 @@ if (!skip_install_check) {
   }
 }
 
-if (window.location.host === "www.transifex.com" || window.location.search.startsWith('?tfxpreview') || window.location.search.startsWith('?transifex')) {
+if (window.location.host === "live.transifex.com" || window.location.host === "www.transifex.com" || window.location.search.startsWith('?tfxpreview') || window.location.search.startsWith('?transifex')) {
   (function() {
     window.liveSettings={api_key:"a2ca9690ebac41a7b423e165d4e66eb5"};
     var script_tag = document.createElement('script');
