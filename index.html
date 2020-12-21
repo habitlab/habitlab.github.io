@@ -386,7 +386,7 @@
               <img src="images/site_icons_240px.png" style="height: 120px" />
 
               <header>
-                <h4>Set Goals</h4>
+                <h4 translatable="true">Set Goals</h4>
               </header>
               <p class="intro_info hta" translatable="true">
                 Pick sites you want to spend less time on
@@ -608,7 +608,7 @@
             <div class="nm main_text">
               <div translatable="true">Contact</div>
 
-              <div style="font-size: 20px" translatable="true">Email us at <span target="_blank" id="meoingadd" style="color: #7AB8D4">(hidden)</span></div>
+              <div style="font-size: 20px" translatable="true">Email us at <span target="_blank" id="meoingadd" style="color: #7AB8D4"><a href="mailto:habitlab-feedback@cs.stanford.edu">habitlab-feedback@cs.stanford.edu</a></span></div>
             </div>
 
           </p>
@@ -623,7 +623,7 @@
         <!-- <li><a href="https://www.linkedin.com/in/lewin-cary-7009b1127" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li> -->
         <li><a href="https://github.com/habitlab/habitlab" class="icon fa-github" trcl="github_habitlab_2"><span class="label">Github</span></a></li>
         <li><a href="https://www.transifex.com/gkovacs/habitlab-website/" class="icon fa-language" trcl="transifex"><span class="label">Transifex</span></a></li>
-        <li><a id="meoingadd2" class="icon fa-envelope" trcl="feedback_2"><span class="label">Contact</span></a></li>
+        <li><a id="meoingadd2" class="icon fa-envelope" trcl="feedback_2" href="mailto:habitlab-feedback@cs.stanford.edu"><span class="label">Contact</span></a></li>
         <!-- <li><a href="https://angel.co/lewin-cary" class="icon fa-angellist"><span class="label">AngelList</span></a></li>
         <li><a href="http://facebook.com/lewin.cary" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
         <li><a href="http://bitbucket.com/lewincary" class="icon fa-bitbucket"><span class="label">Bitbucket</span></a></li> -->
@@ -720,12 +720,6 @@
           /*responsive code end*/
       });
     </script>
-<script>
-var meoingadd_text = [['habitlab', 'feedback'].join('-'), ['cs', 'stanford', 'edu'].join('.')].join('@')
-var meoingadd_prefix = ['ma', 'il', 'to'].join('') + ':'
-//document.querySelector('#meoingadd').innerHTML = '<a href="' + meoingadd_prefix + meoingadd_text + '">' + meoingadd_text + '</a>'
-document.querySelector('#meoingadd2').setAttribute('href', meoingadd_prefix + meoingadd_text)
-</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
