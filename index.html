@@ -728,10 +728,10 @@
 
   gtag('config', 'G-W2020MN7ND', {
     'user_id': localStorage.user_id,
-    'custom_map': {'dimension1': 'locuid'}
+    'custom_map': {'dimension1': 'locuid', 'dimension2': 'transcond'}
   });
-  gtag('event', 'initview', {'event_category': 'engagement', 'locuid': localStorage.user_id});
-  gtag('send', 'pageview', {'locuid': localStorage.user_id});
+  gtag('event', 'initview', {'event_category': 'engagement', 'locuid': localStorage.user_id, 'transcond': window.translation_condition_name});
+  gtag('send', 'pageview', {'locuid': localStorage.user_id, 'transcond': window.translation_condition_name});
 </script>
 <script>
 if (document.implementation && document.implementation.hasFeature && document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Shape", "1.0")) {
