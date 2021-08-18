@@ -728,7 +728,8 @@
 
   gtag('config', 'G-W2020MN7ND', {
     'user_id': localStorage.user_id,
-    'custom_map': {'dimension1': 'locuid', 'dimension2': 'transcond'}
+    'custom_map': {'dimension1': 'locuid', 'dimension2': 'transcond', 'dimension3': 'transconduser'},
+    'transconduser': window.translation_condition_name
   });
   gtag('event', 'initview', {'event_category': 'engagement', 'locuid': localStorage.user_id, 'transcond': window.translation_condition_name});
   gtag('send', 'pageview', {'locuid': localStorage.user_id, 'transcond': window.translation_condition_name});
