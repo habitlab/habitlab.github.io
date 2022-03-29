@@ -204,7 +204,6 @@ function addTranslateButton() {
   help_translate.setAttribute('data-value', 'en');
   help_translate.innerHTML = 'Translate';
   language_picker.appendChild(help_translate);
-  document.querySelector('#tx-live-lang-container').style.display = 'block';
 }
 
 (function() {
@@ -217,7 +216,7 @@ function addTranslateButton() {
     var language_picker = document.getElementById('tx-live-lang-picker')
     if (language_picker) {
       clearInterval(add_translate_timer);
-      addTranslateButton();
+      document.querySelector('#tx-live-lang-container').style.display = 'block';
       setTimeout(function() {
         addTranslateButton();
       }, 1000);
