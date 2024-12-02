@@ -3,7 +3,7 @@
     "babili-webpack-plugin": "^0.0.11",
     "base64-js": "^1.2.0",
     "bootstrap-loader": "^2.0.0",
-    "bootstrap-sass": "^3.3.7",
+    "bootstrap-sass": "^3.4.1",
     "css-loader": "^0.27.3",
     "file-loader": "^0.10.1",
     "html-loader": "^0.4.5",
